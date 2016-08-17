@@ -5,4 +5,21 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def new
+    @user = User.new
+    render :new
+  end
+
+  def create
+    user_params = params.require(:user).permit(:name, :email, :password)
+    @User = User.create(user_params)
+
+    redirect_to root_path
+  end
+
+  def show
+    @user = User.find_by_id(params[:id])
+    render :show
+  end
+
 end
