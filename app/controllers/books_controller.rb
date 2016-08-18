@@ -5,4 +5,25 @@ class BooksController < ApplicationController
     render :index
   end
 
+  def new
+    @book = Book.new
+    render :new
+  end
+
+  def create
+    @Book = Book.create(user_params)
+    redirect_to @book
+  end
+
+  def show
+    @book = Book.find_by_id(params[:id])
+    render :show
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:title :author :genre :image :publication_date :publisher :synopsis)
+  end
+
 end
