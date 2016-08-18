@@ -1,10 +1,10 @@
-Login
+<h2>Login</h2>
 
-<%= form_for @user, url: "/sessions", method: "post" do |f| %>
-  <div>
+<%= form_for @user, :html => {:class => "form-horizontal center-block" }, url: "/sessions", method: "post" do |f| %>
+  <div class="form-control">
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
-  <div>
+  <div class="form-control">
     <%= f.password_field :password, placeholder: "Password" %>
   </div> 
   <%= f.submit "Sign In" %> 
