@@ -1,0 +1,89 @@
+<body class="homepage">
+    <div class="top container">
+      <h1>Welcome to Read It!</h1>
+      <h2>Book reviews and discussion</h2>
+    </div>
+
+<!-- Button trigger modal -->
+<div class="container clearfix">
+  <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal" id="addBook">Add Book</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a Book</h4>
+      </div>
+ 
+      <!-- create book form -->
+      <div class="modal-body">
+        <div class ="addBookForm">
+          <form id="createBook">
+            <div class="form-group">
+              <input type="text" class="form-control" name="contributor" id = "contributor" placeholder="Contributor">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="title" id ="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="author" id="author" placeholder="Author">
+            </div>
+            <select name="genre" class="form-control" id="genre">
+              <option value="Sci-Fi">Sci-Fi</option> 
+              <option value="Fantasy">Fantasy</option> 
+              <option value="Comics">Comics</option> 
+              <option value="Graphic Novel">Graphic Novel</option>
+              <option value="Manga">Manga</option>
+              <option value="Drama">Drama</option>
+              <option value="Nonfiction">Nonfiction</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Horror">Horror</option>
+              <option value="Anthology">Anthology</option>
+              <option value="Biographies">Biographies</option>
+              <option value="Autobiographies">Autobiographies</option>
+            </select>
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control" name="publisher" id="publisher" placeholder="Publisher">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="publicationDate" id="publicationDate" placeholder="Publication Date">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="synopsis" id="synopsis" placeholder="Synopsis">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="image" id="image" placeholder="Image Url">
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- create book modals buttons -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="createBookButton">CREATE BOOK</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <!--Book List Display -->
+      <div class="lowerPage">
+        <ul class="list-group" id="books-list">
+          
+            <% @books.each do |book| %>
+              <li class="list-group-item book" >
+                <img src=<%= book.image %>alt="Book Jacket" class="homepageImages">
+                
+                <p><b>Title: </b><%= book.title %></p>
+                <p><b>Author: </b><%= book.author %></p>
+                <p><b>Genre: </b><%= book.genre %></p>
+              </li>
+         
+          </script>
+        </ul>   
+    </div>  
+</body>    
