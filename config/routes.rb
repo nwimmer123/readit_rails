@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   post "/books", to: "books#create"
   get "books/:id", to: "books#show", as: "book"
 
-
 end
