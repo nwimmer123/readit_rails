@@ -1,3 +1,66 @@
+<section id='signup-form' class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= form_for :book, url: books_path do |f| %>
+        <fieldset>
+          <legend>Add A Book</legend>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="name">Title</label>
+            <div class="col-md-8">
+              <%= f.text_field :title, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="author">Author</label>
+            <div class="col-md-8">
+              <%= f.text_field :author, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="image">Image Url</label>
+            <div class="col-md-8">
+              <%= f.text_field :image, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="publication_date">Publication Date</label>
+            <div class="col-md-8">
+              <%= f.text_field :publication_date, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="publisher">Publisher</label>
+            <div class="col-md-8">
+              <%= f.text_field :publisher, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="synopsis">Synopsis</label>
+            <div class="col-md-8">
+              <%= f.text_area :synopsis, required: true, class: "form-control" %><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <%= f.submit "Create Book", class: "btn btn-success" %>
+            </div>
+          </div>
+          
+        </fieldset>
+      <% end %>
+
+    </div>
+  </div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
