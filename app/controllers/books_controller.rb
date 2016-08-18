@@ -12,7 +12,7 @@ class BooksController < ApplicationController
 
   def create
     @Book = Book.create(user_params)
-    redirect_to @book
+    redirect_to root_path
   end
 
   def show
