@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
 
-  get "/login", to: "sessions#new"
+  get "/login", to: "sessions#new", as: "login"
   get "/logout", to: "sessions#destroy"
-  post "/sessions", to: "sessions#create"
+  post "/login", to: "sessions#create"
 
   get "/books", to: "books#index", as: "books"
   get "/books/new", to: "books#new", as: "new_book"
