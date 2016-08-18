@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   get "/books", to: "books#index", as: "books"
+  get "/books/new", to: "books#new", as: "new_book"
+  post "/books", to: "books#create"
+  get "books/:id", to: "books#show", as: "book"
 
 
 end
