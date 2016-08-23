@@ -2,12 +2,10 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    # render :book
   end
 
   def new
     @book = Book.new
-    # render :new
   end
 
   def create
