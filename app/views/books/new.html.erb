@@ -27,6 +27,14 @@
             </div>
           </div>
 
+          <select name="book_id">
+            <%= @genres.each do |genre| %>
+              <option value="<%= book.id %>"><%= genre %></option>
+            <% end %>
+          </select>
+
+         
+
           <div class="form-group">
             <label class="col-md-4 control-label" for="publication_date">Publication Date</label>
             <div class="col-md-8">
