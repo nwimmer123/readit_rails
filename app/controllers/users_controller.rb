@@ -6,14 +6,17 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
-    render :new
   end
 
   def create
-    @User = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    user = User.new(user_params)
+    if user.save
+      login(user)
+      redirect_to root_path
+    else
+      flash[:error] = "Email has already been taken"
+      redirect_to '/signup'
+    end
   end
 
   def show

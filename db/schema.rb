@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818164531) do
+ActiveRecord::Schema.define(version: 20160818164214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160818164531) do
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
+    t.string   "genre"
     t.string   "image"
     t.string   "publication_date"
     t.string   "publisher"
@@ -26,16 +27,9 @@ ActiveRecord::Schema.define(version: 20160818164531) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
-    t.integer  "genre_id"
   end
 
-  add_index "books", ["genre_id"], name: "index_books_on_genre_id", using: :btree
   add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
-
-  create_table "genres", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -55,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160818164531) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "books", "genres"
   add_foreign_key "books", "users"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
