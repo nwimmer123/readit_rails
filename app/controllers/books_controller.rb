@@ -1,18 +1,13 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
-    render :index
   end
 
   def new
-   
-    @book = Book.new
-    render :new
   end
 
   def create
-    @Book = Book.create(user_params)
+    @Book = Book.create(book_params)
     redirect_to root_path
   end
 
@@ -23,7 +18,7 @@ class BooksController < ApplicationController
 
   private
 
-  def user_params
+  def book_params
     params.require(:book).permit(:title, :author, :genre, :image, :publication_date, :publisher, :synopsis)
   end
 
