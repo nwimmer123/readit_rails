@@ -13,18 +13,18 @@ rd =  Book.create(user_id:1,
       author:"Peter Hamilton",
       genre:"Sci-fi",
       image:"http://sfreviews.net/large_covers/reality_dysfunction.jpg",
-      publicationDate:"1996")
+      publication_date:"1996")
 fr =  Book.create(user_id:1,
       title:"The Fellowship of the Ring",
       author:"J.R.R. Tolkien",
       genre:"Fantasy",
       image:"http://www.pagepulp.com/wp-content/527.jpg",
-      publicationDate: "1954")
+      publication_date: "1954")
 hy =  Book.create(user_id:1,
       title:"Hyperion",
       author:"Dan Simmons",
       genre:"Sci-fi",
       image:"http://ecx.images-amazon.com/images/I/51zwyTJNlWL.jpg",
-      publicationDate:"1989")
+      publication_date:"1989")
 
 
