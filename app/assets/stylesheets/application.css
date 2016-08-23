@@ -14,6 +14,16 @@
  *= require_self
  *= require bootstrap.min
  */
+.book{
+  margin: 20px 20px 20px 20px;
+  opacity: 0.8;
+}
+
+.homepageImages {
+  float: right;
+  height: 120px;
+}
+
 #thanos {
   float: left;
   height: 150px;
@@ -24,11 +34,6 @@
 
 #editEntry {
   margin-left: 15px;
-}
-
-.book {
-  cursor: pointer; 
-  cursor: hand; 
 }
 
 .reviewTitle {
@@ -68,14 +73,7 @@
   text-shadow: 2px 2px #ff0000;
 }
 
-.book {
-  opacity: 0.8;
-}
 
-.homepageImages {
-  float: right;
-  height: 145px;
-}
 
 .bookInfo {
   text-align: right;
@@ -97,8 +95,5 @@
 
 .navbar {
   opacity: .8;
-}
-
-body {
-  margin-top: 15px;
+  padding-right: 15px;
 }
