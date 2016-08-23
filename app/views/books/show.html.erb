@@ -1,8 +1,8 @@
- 
-<img src=<%= @book.image %> alt="Book Jacket" class="homepageImages">
+
+  <img src=<%= @book.image %> <%= link_to "Profile", user_path(current_user) %>alt="Book Jacket" class="homepageImages">
+
 
 <p><b>Contributor: </b><%= @book.user.name %></p>
-
 <p><b>Title: </b><%= @book.title %></p>
 <p><b>Author: </b><%= @book.author %></p>
 <p><b>Genre: </b><%= @book.genre %></p>
