@@ -14,6 +14,9 @@
  *= require_self
  *= require bootstrap.min
  */
+
+ /* HOMEPAGE STYLING - books.index */
+
 .book{
   margin: 20px 20px 20px 20px;
   opacity: 0.8;
@@ -24,11 +27,51 @@
   height: 120px;
 }
 
+.bookDisplay {
+  margin-bottom: 12px;
+  font-size: larger;
+  padding: 15px;
+  opacity: 0.8;
+}
+
+.homepage{
+  background:url('/images/infinity2.jpg') no-repeat center center;
+  min-height:100%;
+  background-size:cover;
+}
+
+.top {
+  font-family: 'UnifrakturMaguntia', cursive;
+  color: #CED807;
+  margin-top: 25px;
+  text-shadow: 2px 2px #ff0000;
+}
+
+/* SHOWPAGE STYLING - books.show */
+
+.showpage{
+  position: fixed;
+  height: 100%;
+  background: rgba(51,51,51,0.7);
+  z-index: 10;
+  margin-top: 10px;
+}
+
 .singleBook {
   margin: 20px 30px 20px 30px;
   opacity: 0.8;
   background-color: white;
+  border-radius: 20px;
+  padding: 10px 0px 10px 0px;
 }
+
+#showpageImages {
+  float: right;
+  height: 160px;
+  margin-top: 15px;
+}
+
+/* ALL PAGES */
 
 #thanos {
   float: left;
@@ -50,35 +93,8 @@
   float: right;
 }
 
-.bookDisplay {
-  margin-bottom: 12px;
-  font-size: larger;
-  padding: 15px;
-  opacity: 0.8;
-}
-
 #reviewerInput {
   margin-top: 15px;
-}
-
-.homepage{
-  background:url('/images/infinity2.jpg') no-repeat center center;
-  min-height:100%;
-  background-size:cover;
-}
-
-.showpage{
-  position: fixed;
-  height: 100%;
-  background: rgba(51,51,51,0.7);
-  z-index: 10;
-}
-
-.top {
-  font-family: 'UnifrakturMaguntia', cursive;
-  color: #CED807;
-  margin-top: 25px;
-  text-shadow: 2px 2px #ff0000;
 }
 
 .bookInfo {
@@ -86,7 +102,8 @@
   color: #FBFCD3;
   text-shadow: 4px 4px black;
 }
- .wholepage {
+
+.wholepage {
   background-color: #810828;
  }
 
@@ -102,4 +119,5 @@
 .navbar {
   opacity: .8;
   padding-right: 15px;
+
 }
