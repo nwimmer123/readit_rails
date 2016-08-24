@@ -13,23 +13,23 @@
 <% end %>
 
   <!--Book List Display -->
-  <div class="lowerPage">
-    <ul class="list-group" id="books-list">
-      
-      <% @books.each do |book| %>
-        <%= link_to book do %>
 
-          <li class="list-group-item book" >
-            <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
-            <p><b>Contributor: </b><%= book.user.name %></p>
-            <p><b>Title: </b><%= book.title %></p>
-            <p><b>Author: </b><%= book.author %></p>
-            <p><b>Genre: </b><%= book.genre %></p>
-          </li>
-          
-        <% end %>
-      <% end %>
+  <ul class="list-group" id="books-list">
     
-    </ul>   
-  </div>  
+    <% @books.each do |book| %>
+      <%= link_to book do %>
+
+        <li class="list-group-item book" >
+          <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
+          <p><b>Contributor: </b><%= book.user.name %></p>
+          <p><b>Title: </b><%= book.title %></p>
+          <p><b>Author: </b><%= book.author %></p>
+          <p><b>Genre: </b><%= book.genre %></p>
+        </li>
+        
+      <% end %>
+    <% end %>
+  
+  </ul>   
+ 
 </body>    

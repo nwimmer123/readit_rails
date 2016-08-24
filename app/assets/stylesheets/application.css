@@ -24,6 +24,12 @@
   height: 120px;
 }
 
+.singleBook {
+  margin: 20px 30px 20px 30px;
+  opacity: 0.8;
+  background-color: white;
+}
+
 #thanos {
   float: left;
   height: 150px;
@@ -46,9 +52,9 @@
 
 .bookDisplay {
   margin-bottom: 12px;
-    font-size: larger;
-    padding: 15px;
-    opacity: 0.8;
+  font-size: larger;
+  padding: 15px;
+  opacity: 0.8;
 }
 
 #reviewerInput {
@@ -62,8 +68,10 @@
 }
 
 .showpage{
-  min-height:100%;
-  background-size:cover;
+  position: fixed;
+  height: 100%;
+  background: rgba(51,51,51,0.7);
+  z-index: 10;
 }
 
 .top {
@@ -72,8 +80,6 @@
   margin-top: 25px;
   text-shadow: 2px 2px #ff0000;
 }
-
-
 
 .bookInfo {
   text-align: right;

@@ -1,15 +1,34 @@
 
-  <img src=<%= @book.image %> <%= link_to "Profile", user_path(current_user) %>alt="Book Jacket" class="homepageImages">
+
+<%= javascript_tag do %>
+
+  $(document).ready(function() {
+
+    var randomNum = Math.floor((Math.random()*30)+1);
+    console.log (randomNum);
+    var backgroundUrl = '/images/images' + randomNum + '.jpg';
+    $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
+    console.log (backgroundUrl);
+
+  });
+
+<% end %>
 
 
-<p><b>Contributor: </b><%= @book.user.name %></p>
-<p><b>Title: </b><%= @book.title %></p>
-<p><b>Author: </b><%= @book.author %></p>
-<p><b>Genre: </b><%= @book.genre %></p>
-<p><b>Publication Date: </b><%= @book.publication_date %></p>
-<p><b>Publisher: </b><%= @book.publisher %></p>
-<p><b>Synopsis: </b><%= @book.synopsis %></p>
+<div class="showpage">
 
+  <ul class="container singleBook">
+    <img src=<%= @book.image %> alt="Book Jacket" class="homepageImages">
+    <p><b>Contributor: </b><%= @book.user.name %></p>
+    <p><b>Title: </b><%= @book.title %></p>
+    <p><b>Author: </b><%= @book.author %></p>
+    <p><b>Genre: </b><%= @book.genre %></p>
+    <p><b>Publication Date: </b><%= @book.publication_date %></p>
+    <p><b>Publisher: </b><%= @book.publisher %></p>
+    <p><b>Synopsis: </b><%= @book.synopsis %></p>
+  </ul>
+
+</div>
 
 
 
