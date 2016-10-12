@@ -4,9 +4,8 @@
       <h2>Book reviews and discussion</h2>
     </div>
 
+<!-- Checks to see if someone is logged in prior to displaying button -->
 <% if current_user %> 
-<!-- Add book button -->
-
   <div class="container">
     <button type="button" class="btn btn-primary btn-lg pull-right" id="addBook"><%= link_to "Add Book", new_book_path %></button>
   </div>
