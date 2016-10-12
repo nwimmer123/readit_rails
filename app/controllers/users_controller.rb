@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @books = Book.all
     @user = User.find_by_id(params[:id])
     render :show
   end

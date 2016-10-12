@@ -1,3 +1,19 @@
 <div>
   Welcome, <%= @user.name %>
+
+Here are your books!
+    <% @books.each do |book| %>
+      <% if book.user == current_user %> 
+        <%= link_to book do %>
+
+          <li class="list-group-item book" >
+            <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
+            <p><b>Contributor: </b><%= book.user.name %></p>
+            <p><b>Title: </b><%= book.title %></p>
+            <p><b>Author: </b><%= book.author %></p>
+            <p><b>Genre: </b><%= book.genre %></p>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
 </div>
