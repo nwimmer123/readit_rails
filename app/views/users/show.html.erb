@@ -1,9 +1,12 @@
 <div>
   Welcome, <%= @user.name %>
 
-Here are your books!
-    <% @books.each do |book| %>
-      <% if book.user == current_user %> 
+
+<div class="container text-center">
+  <h2>Your Books</h2>
+  <div class="container">
+    <% @user.books.each do |book| %>
+   
         <%= link_to book do %>
 
           <li class="list-group-item book" >
@@ -14,6 +17,9 @@ Here are your books!
             <p><b>Genre: </b><%= book.genre %></p>
           </li>
         <% end %>
-      <% end %>
+
     <% end %>
+    </div>
+  </div>
 </div>
+

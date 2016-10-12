@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   def create
     @user = current_user
     @book = Book.create(book_params)
-    @book.set_user!(current_user)
+    @book.set_user(current_user)
     redirect_to root_path
   end
 
