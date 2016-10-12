@@ -47,6 +47,10 @@
   text-shadow: 2px 2px #ff0000;
 }
 
+#addBook {
+  color: white !important;
+}
+
 /* SHOWPAGE STYLING - books.show */
 
 .showpage{
@@ -69,6 +73,7 @@
   float: right;
   height: 160px;
   margin-top: 15px;
+  opacity: 1;
 }
 
 /* ALL PAGES */

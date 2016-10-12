@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  before_action :logged_in?, only: [:destroy]
+  before_action :logged_out?, only: [:new, :create]
   
   def new
     @user = User.new
@@ -6,7 +9,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.confirm(user_params)
+    @user = User.create(user_params)
     if @user
       login(@user)
       flash[:notice] = "Succesfully logged in."
