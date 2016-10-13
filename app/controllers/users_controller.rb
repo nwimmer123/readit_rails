@@ -21,16 +21,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    #@books = Book.all
     @user = current_user
     @books = Book.find_by_user_id(current_user.id)
     
   end
 
   def edit
+    @user = current_user
   end
 
   def update
+    @user = current_user
+    current_params = params.require(:user).permit(:name, :email)
+    @user.update_attributes(current_params)
+    redirect_to user_path
   end
 
   def destroy
