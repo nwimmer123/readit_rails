@@ -1,4 +1,3 @@
-
 <div class="container text-center info-box">
   <h2 id="info">Your Information</h2>
   <h4>Name: <%= @user.name %>
@@ -17,22 +16,22 @@
   </div>
 </div>
 
-
-<div class="container text-center">
+<div class="container">
   <h2>Your Books</h2>
   <div class="container">
     <% @user.books.each do |book| %>
-      <%= link_to book do %>
-        <li class="list-group-item book" >
-          <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
-          <p><b>Contributor: </b><%= book.user.name %></p>
-          <p><b>Title: </b><%= book.title %></p>
-          <p><b>Author: </b><%= book.author %></p>
-          <p><b>Genre: </b><%= book.genre %></p>
-        </li>
-      <% end %>
+      <li class="list-group-item book" >
+        <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
+        <p><b>Contributor: </b><%= book.user.name %></p>
+        <p><b>Title: </b><%= book.title %></p>
+        <p><b>Author: </b><%= book.author %></p>
+        <p><b>Genre: </b><%= book.genre %></p>
+        <p><b>Publication Date: </b><%= book.publication_date %></p>
+        <p><b>Publisher: </b><%= book.publisher %></p>
+        <p><b>Synopsis: </b><%= book.synopsis %></p>
+      </li>
     <% end %>
     </div>
   </div>
 
-
+ 
