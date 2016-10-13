@@ -47,18 +47,15 @@
   text-shadow: 2px 2px #ff0000;
 }
 
-#addBook {
-  color: white;
-}
-
 /* PROFILE PAGE STYLING - user.show */
 
 .profileDisplay{
   margin-bottom: 30px;
   padding: 10px 15px 50px 10px;
   background-color: white;
-  opacity: .8;
+  opacity: .9;
   border-radius: 10px;
+  color: black;
 }
 
 /* SHOWPAGE STYLING - books.show */
@@ -88,9 +85,16 @@
 
 /* ALL PAGES */
 
+html, body, .outer {
+  min-height: 100%;
+}
+
 .page{
-  background: #6c6fd8;
   margin-top: 10px;
+  background:url('/images/starfield.jpg') no-repeat center center;
+  min-height:100%;
+  background-size: cover;
+  color: papayawhip;
 }
 
 #thanos {
