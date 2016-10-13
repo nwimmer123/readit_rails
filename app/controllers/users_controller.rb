@@ -45,4 +45,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password)
   end
 
+  def set_user
+    @user = current_user  
+  end
+
 end

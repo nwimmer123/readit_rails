@@ -48,7 +48,13 @@
 }
 
 #addBook {
-  color: white !important;
+  color: white;
+}
+
+/* PROFILE PAGE STYLING - user.show */
+
+.profileName{
+  
 }
 
 /* SHOWPAGE STYLING - books.show */
@@ -77,6 +83,11 @@
 }
 
 /* ALL PAGES */
+
+.page{
+  background: #6c6fd8;
+  margin-top: 10px;
+}
 
 #thanos {
   float: left;

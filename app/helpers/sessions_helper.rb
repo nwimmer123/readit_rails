@@ -29,8 +29,4 @@ module SessionsHelper
     current_user == user
   end
 
-  def set_user
-    @user = current_user  
-  end
-
 end
