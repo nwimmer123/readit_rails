@@ -1,20 +1,19 @@
 <div class="page">
 
-  <div class="container profileName "> 
-    <h2 id="info">Your Information</h2>
+  <div class="container"> 
+    <h2 id="info">Profile</h2>
     <h4>Name: <%= @user.name %>
     <br>
     Email: <%= @user.email %></h4>
-   
-      <% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
-        <%= button_to "Edit Profile", edit_user_path(@user.id), method: "get", class: "btn btn-primary col-xs-2" %>
-        <%= button_to "Delete", url_for(action: :destroy, id: @user.id),method: :delete, data: {confirm: "Are you sure you want to delete yourself and all your wonderfull books and reviews that are read by so many of our delighted users?"}, class: "btn btn-danger col-xs-2" %>
-      <% end %>
-  
+    <% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
+      <%= button_to "Edit Profile", edit_user_path(@user.id), method: "get", class: "btn btn-primary col-xs-2" %>
+      <%= button_to "Delete", url_for(action: :destroy, id: @user.id),method: :delete, data: {confirm: "Are you sure you want to delete yourself and all your wonderfull books and reviews that are read by so many of our delighted users?"}, class: "btn btn-danger col-xs-2" %>
+    <% end %>
+
   </div>
 
-  <div class="container ">
-    <h2>Your Books</h2>
+  <div class="container">
+    <h2>Books</h2>
   </div>
 
   <div class="container">
@@ -35,4 +34,3 @@
   </div>
 
 </div>
- 

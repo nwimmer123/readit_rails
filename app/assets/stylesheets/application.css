@@ -53,16 +53,12 @@
 
 /* PROFILE PAGE STYLING - user.show */
 
-.profileName{
-  
-}
 .profileDisplay{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 10px 15px 50px 10px;
   background-color: white;
   opacity: .8;
   border-radius: 10px;
-
 }
 
 /* SHOWPAGE STYLING - books.show */
