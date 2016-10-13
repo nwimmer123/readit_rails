@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :logged_in?, only: [:edit, :update]
-  #before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
   end
@@ -21,17 +21,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
     @books = Book.find_by_user_id(current_user.id)
-    
   end
 
   def edit
-    @user = current_user
   end
 
   def update
-    @user = current_user
     current_params = params.require(:user).permit(:name, :email)
     @user.update_attributes(current_params)
     redirect_to user_path
@@ -39,7 +35,6 @@ class UsersController < ApplicationController
 
   def destroy
   end
-
 
   private
 
