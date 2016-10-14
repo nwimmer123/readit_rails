@@ -82,6 +82,12 @@
   opacity: 1;
 }
 
+.addReview {
+  background-color: yellow;
+  opacity: .9;
+  border-radius: 10px;
+}
+
 /* ALL PAGES */
 
 html, body, .outer {
