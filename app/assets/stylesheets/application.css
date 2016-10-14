@@ -61,7 +61,6 @@
 /* SHOWPAGE STYLING - books.show */
 
 .showpage{
-  position: fixed;
   height: 100%;
   background: rgba(51,51,51,0.7);
   z-index: 10;

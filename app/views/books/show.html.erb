@@ -1,36 +1,29 @@
-<body>
+<%= javascript_tag do %>
+  $(document).ready(function() {
 
-  <%= javascript_tag do %>
+    var randomNum = Math.floor((Math.random()*30)+1);
+    var backgroundUrl = '/images/images' + randomNum + '.jpg';
+    $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
 
-    $(document).ready(function() {
+  });
+<% end %>
 
-      var randomNum = Math.floor((Math.random()*30)+1);
-      console.log (randomNum);
-      var backgroundUrl = '/images/images' + randomNum + '.jpg';
-      $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
-      console.log (backgroundUrl);
+<div class="showpage">
 
-    });
+  <ul class="container singleBook">
+    <img src=<%= @book.image %> alt="Book Jacket" id="showpageImages">
+    <p><b>Contributor: </b><%= @book.user.name %></p>
+    <p><b>Title: </b><%= @book.title %></p>
+    <p><b>Author: </b><%= @book.author %></p>
+    <p><b>Genre: </b><%= @book.genre %></p>
+    <p><b>Publication Date: </b><%= @book.publication_date %></p>
+    <p><b>Publisher: </b><%= @book.publisher %></p>
+    <p><b>Synopsis: </b><%= @book.synopsis %></p>
+  </ul>
 
-  <% end %>
+</div>
 
 
-  <div class="showpage">
-
-    <ul class="container singleBook">
-      <img src=<%= @book.image %> alt="Book Jacket" id="showpageImages">
-      <p><b>Contributor: </b><%= @book.user.name %></p>
-      <p><b>Title: </b><%= @book.title %></p>
-      <p><b>Author: </b><%= @book.author %></p>
-      <p><b>Genre: </b><%= @book.genre %></p>
-      <p><b>Publication Date: </b><%= @book.publication_date %></p>
-      <p><b>Publisher: </b><%= @book.publisher %></p>
-      <p><b>Synopsis: </b><%= @book.synopsis %></p>
-    </ul>
-
-  </div>
-
-</body>
 
 
 
