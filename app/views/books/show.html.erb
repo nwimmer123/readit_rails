@@ -21,6 +21,14 @@
     <p><b>Synopsis: </b><%= @book.synopsis %></p>
   </ul>
 
+  <div class="container">
+    <%= form_for ([@book, @book.reviews.build])  do |f|%>
+      <div class="context-field">
+     
+      </div>
+    <% end %>
+  </div>
+
 </div>
 
 
