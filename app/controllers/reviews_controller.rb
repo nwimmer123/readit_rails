@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @user = current_user
+    #@user = current_user
     @book = Book.find(params[:id])
 		@review = Review.create(review_params)
 

@@ -22,7 +22,6 @@
   </ul>
 
   <div class="container addReview">
-
     <h2>Reviews and Discussion</h2>
 
     <%= form_for :review, url: reviews_path  do |f|%>
@@ -43,10 +42,12 @@
         <%= f.submit "SUBMIT", class: "btn btn-primary pull-right" %>
       </div>
 
-  
-
     <% end %>
   </div>
+
+  <div class="showReviews">
+    <%= %>
+  <div>
 
 </div>
 
