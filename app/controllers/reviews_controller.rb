@@ -5,17 +5,20 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @review = Review.new
   end
 
   def create
+    @user = current_user
     @book = Book.find(params[:id])
-		@review = @user.reviews.create(review_params)
+		@review = Review.create(review_params)
+
 		redirect_to book_path(@book)
   end
 
   	private
 		def review_params
-			params.require(:review).permit(:reviewer, :body, :rskill)
+			params.require(:review).permit(:body, :spoiler, :book_id, :user_id)
 		end
 
 end
