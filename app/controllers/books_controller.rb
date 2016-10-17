@@ -21,6 +21,7 @@ class BooksController < ApplicationController
     @user = current_user
     @reviews = Review.all
     #@reviews = Review.find_by(book_id: current_book)
+    
   end
 
   def edit

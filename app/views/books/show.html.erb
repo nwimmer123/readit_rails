@@ -14,7 +14,9 @@
 <br>
 
 <% @reviews.each do |review| %>
+  <% if review.book_id.to_s == params[:id].to_s %>
   <p><%= review.body %></p>
+  <% end %>
 <% end %>
 <br>
 <br>
