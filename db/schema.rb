@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20161014173554) do
     t.integer  "book_id"
     t.integer  "user_id"
     t.string   "body"
-    t.integer  "spoiler"
+    t.string   "spoiler"
   end
 
   add_index "reviews", ["book_id"], name: "index_reviews_on_book_id", using: :btree
