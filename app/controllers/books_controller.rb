@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
 
-  before_action :current_book, only: [:show, :edit, :update, :destroy]
+  before_action :current_book, only: [:show, :edit, :update, :destroy, :show_reviews, :show_spoilers, :show_all]
+
+  before_action :get_reviews, only: [:show_reviews, :show_spoilers, :show_all]
 
   def index
     @books = Book.all
@@ -18,9 +20,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    #@book = current_book 
     @user = current_user
     @reviews = Review.all
-    #@reviews = Review.find_by(book_id: current_book)
+    find_reviews
+    #@reviews = Review.find_by_book_id(current_book.id)
     
   end
 
@@ -47,6 +51,21 @@ class BooksController < ApplicationController
 
   def current_book
     @book = Book.find_by_id(params[:id])
+  end
+
+  def find_reviews
+    puts "LOOK HERE!!!!!!"
+    @reviews.each do |review|
+      if review.book_id.to_s == params[:id].to_s
+        puts review.spoiler
+      end
+    end
+    @show_the_reviews = true
+  end
+
+  def get_reviews
+    @show_the_reviews
+    @reviews = Review.all
   end
 
 end

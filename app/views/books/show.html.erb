@@ -1,11 +1,15 @@
 <%= javascript_tag do %>
-  $(document).ready(function() {
 
-    var randomNum = Math.floor((Math.random()*30)+1);
-    var backgroundUrl = '/images/images' + randomNum + '.jpg';
-    $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
+$(document).ready(function() {
 
-  });
+  console.log("In JS Script");
+  var randomNum = Math.floor((Math.random()*30)+1);
+  var backgroundUrl = '/images/images' + randomNum + '.jpg';
+  console.log(backgroundUrl);
+  $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
+
+});
+
 <% end %>
 
 <div class="showpage">
@@ -44,15 +48,30 @@
     <% end %>
   </div>
 
-  <div class="container addReview">
-
-    <% @reviews.each do |review| %>
-      <% if review.book_id.to_s == params[:id].to_s %>
-      <p><%= review.body %></p>
-      <% end %>
-    <% end %>
-
+  <div class="container">
+    <%= button_to "Show Reviews", show_reviews_path(@book.id), method: "get", class: "btn btn-primary col-xs-2" %>
+    <%= button_to "Show Spoilers", show_spoilers_path(@book.id), method: "get", class: "btn btn-primary col-xs-2" %>
+    <%= button_to "Show It All", show_all_path(@book.id), method: "get", class: "btn btn-primary col-xs-2"%>
   </div>
+
+<% if @show_the_reviews == true %>
+    <div class="container">
+      <% @reviews.each do |review| %>
+        <% if review.book_id.to_s == params[:id].to_s %>
+        <div class="review">
+          <div>
+            <strong><%= review.user.name %></strong>
+            <% if review.spoiler == "1" %>
+              <span class="center-text">SPOILER</span>
+            <% end %>
+          </div>
+          <p><%= review.body %></p>
+          <button class="pull-right">Respond</button>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+<% end %>
 
 </div>
 
