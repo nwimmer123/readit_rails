@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   delete "/books/:id", to: "books#destroy", as: "delete_book"
 
   get "/books/:id/reviews", to: "reviews#index", as: "reviews"
+  get "/books/:id/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
   post "/books/:id/reviews", to: "reviews#create"
+  
 
 end
