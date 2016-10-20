@@ -23,7 +23,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="genre">Genre</label>
             <div class="col-md-8">
-              <%= f.text_field :genre, required: true, class: "form-control" %><br>
+              <%= f.select :genre, [["Sci-fi", "Sci-fi"], ["Fantasy", "Fantasy"], ["Comic", "Comic"], ["Manga", "Manga"]], class: "form-control" %>
             </div>
           </div>
           
