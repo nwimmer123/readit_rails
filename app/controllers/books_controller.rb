@@ -22,7 +22,6 @@
       def show
         @user = current_user
         @reviews = Review.all
-        
       end
 
       def edit
