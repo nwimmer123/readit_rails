@@ -1,0 +1,16 @@
+<%= form_for :review, url: reviews_path  do |f|%>
+  <div class="form-group">
+    <%= f.text_area :body, required: true, class: "form-control"%>
+    <%= f.hidden_field :book_id, value: params[:id] %>
+  
+    <%= f.hidden_field :parent_id %>
+
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box(:spoiler) %>
+    <%= label_tag( "SPOILER ALERT") %>
+    <%= f.submit "SUBMIT", class: "btn btn-primary pull-right" %>
+  </div>
+
+<% end %>

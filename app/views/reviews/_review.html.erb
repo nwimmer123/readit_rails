@@ -1,0 +1,18 @@
+<div class="well">
+  
+  <p class="text-muted">Added by <strong>reviewer name here</strong> on
+    <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+
+  <blockquote>
+    <p><%= review.body %></p>
+  </blockquote>
+
+	<% from_reply_form ||= nil %>
+	<% unless from_reply_form %>
+    <% if review.leaf? %>
+      <small class="text-muted">There are no replies yet - be the first one to reply!</small  >
+    <% end %>
+    <p><%= link_to 'reply', new_review_path(review.id) %></p>
+  <% end %>
+
+</div>

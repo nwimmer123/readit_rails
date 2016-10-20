@@ -46,17 +46,29 @@ $(document).ready(function() {
     <button class="btn btn-danger" id="show_spoilers">Show Spoilers</button>
   </div>
 
+  <%= reviews_tree_for @reviews %>
+
   <div class="container">
     <% @reviews.each do |review| %>
       <% if review.book_id.to_s == params[:id].to_s %>
         <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
+
+          
+
+
         
+<%
+=begin %> WORKING NON NESTED REVIEW CODE
+
         <div class="review <%= review_class%>">
           <strong><%= review.user.name %></strong>
             <% if review.spoiler == "1" %>
               <span class="center-text pull-right">SPOILER</span>
             <% end %>
           <p><%= review.body %></p>
+
+<%
+=end %>
     
         </div>
       <% end %>
