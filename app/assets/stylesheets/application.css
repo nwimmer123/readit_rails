@@ -70,6 +70,10 @@
 
 /* SHOWPAGE STYLING - books.show */
 
+.showpage {
+  padding-bottom: 300px;
+}
+
 .singleBook {
   margin: 10px 30px 20px 30px;
   opacity: 0.8;
