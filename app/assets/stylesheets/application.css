@@ -15,6 +15,22 @@
  *= require bootstrap.min
  */
 
+ /* ALL PAGES */
+
+.page{
+  margin-top: 10px;
+  background:url('/images/starfield.jpg') no-repeat center center;
+  min-height:100%;
+  background-size: cover;
+  color: papayawhip;
+  padding-bottom: 700px;
+  text-shadow: 2px 2px rebeccapurple;
+}
+
+.navbar {
+  padding-right: 15px;
+}
+
  /* HOMEPAGE STYLING - books.index */
 
 .book{
@@ -25,13 +41,6 @@
 .homepageImages {
   float: right;
   height: 120px;
-}
-
-.bookDisplay {
-  margin-bottom: 12px;
-  font-size: larger;
-  padding: 15px;
-  opacity: 0.8;
 }
 
 .homepage{
@@ -60,19 +69,19 @@
 
 /* SHOWPAGE STYLING - books.show */
 
-.showpage{
-  min-height: 100%;
-  background-color: #ab1515;
-  z-index: 10; 
-  margin-top: 10px; 
-}
-
 .singleBook {
-  margin: 0px 30px 20px 30px;
+  margin: 10px 30px 20px 30px;
   opacity: 0.8;
   background-color: white;
   border-radius: 15px;
   padding: 10px 0px 10px 0px;
+}
+
+.showTitle {
+  background-color: snow;
+  opacity: .85;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #showpageImages {
@@ -97,61 +106,4 @@
   margin-bottom: 10px;
 }
 
-/* ALL PAGES */
 
-.page{
-  margin-top: 10px;
-  background:url('/images/starfield.jpg') no-repeat center center;
-  min-height:100%;
-  background-size: cover;
-  color: papayawhip;
-}
-
-#thanos {
-  float: left;
-  height: 150px;
-  margin: 15px;
-  border-radius: 30px;
-  opacity: 0.8;
-}
-
-#editEntry {
-  margin-left: 15px;
-}
-
-.reviewTitle {
-  text-align: center;
-}
-
-#dateDisplay {
-  float: right;
-}
-
-#reviewerInput {
-  margin-top: 15px;
-}
-
-.bookInfo {
-  text-align: right;
-  color: #FBFCD3;
-  text-shadow: 4px 4px black;
-}
-
-.wholepage {
-  background-color: #810828;
- }
-
-.reviewsBook {
-  color: #FBFCD3;
-  text-shadow: 4px 4px black;
-}
-
-.reviewBox {
-  opacity: 0.8;
-}
-
-.navbar {
-  opacity: .8;
-  padding-right: 15px;
-
-}
