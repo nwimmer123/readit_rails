@@ -99,10 +99,6 @@
 
 /* ALL PAGES */
 
-html, body, .outer {
-  min-height: 100%;
-}
-
 .page{
   margin-top: 10px;
   background:url('/images/starfield.jpg') no-repeat center center;

@@ -1,10 +1,9 @@
-<div align="center"><%= image_tag "starfield.jpg", class: "background" %></div>
-<section id='edit-book-form' class="container form">
+<div class="form page">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for @book, url: {action: "update"} do |f| %>
         <fieldset>
-          <legend>Add A Book</legend>
+          <h1 class="text-center">Add A Book</h1>
 
           <div class="form-group">
             <label class="col-md-4 control-label" for="name">Title</label>
@@ -65,4 +64,4 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
