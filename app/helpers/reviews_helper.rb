@@ -1,5 +1,7 @@
 module ReviewsHelper
 
+# Maybe put conditional logic about if book_id = params id here
+
   def reviews_tree_for(reviews)
     reviews.map do |review, nested_reviews|
       render(review) +

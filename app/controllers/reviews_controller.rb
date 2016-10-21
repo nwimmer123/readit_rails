@@ -6,16 +6,15 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    
-    #@book = Book.find(params[:id])
+    @book = Book.find(params[:id])
     @review = Review.new(parent_id: params[:parent_id]) 
 
-    #redirect_to book_path(@book)
+    #redirect_to new_review_path
   end
 
   def create
-  
-    #@book = Book.find(params[:id])
+		@user = current_user
+    @book = Book.find(params[:id])
 		if params[:review][:parent_id].to_i > 0
 	    parent = Review.find_by_id(params[:review].delete(:parent_id))
 	    @review = parent.children.build(review_params)

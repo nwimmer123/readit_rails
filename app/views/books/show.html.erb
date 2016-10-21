@@ -38,6 +38,9 @@ $(document).ready(function() {
   <div class="container addReview">
     <h2>Reviews and Discussion</h2>
 
+<% 
+=begin %>
+
     <%= form_for :review, url: book_path  do |f|%>
       <div class="form-group">
         <%= f.text_area :body, required: true, class: "form-control"%>
@@ -54,6 +57,9 @@ $(document).ready(function() {
       </div>
 
     <% end %>
+
+<% 
+=end %>
 
   </div>
 
@@ -73,10 +79,13 @@ $(document).ready(function() {
 <%= reviews_tree_for @reviews %>
 <% 
 =begin %>
+
   <div class="container">
     <% @reviews.each do |review| %>
       <% if review.book_id.to_s == params[:id].to_s %>
         <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
+
+        <%= reviews_tree_for @reviews %>
 
         <div class="review <%= review_class%>">
           <strong><%= review.user.name %></strong>
@@ -84,12 +93,13 @@ $(document).ready(function() {
               <span class="center-text pull-right">SPOILER</span>
             <% end %>
           <p><%= review.body %></p>
-
         </div>
+
+        
       <% end %>
     <% end %>
   </div>
+
 <%
 =end %>
-
 </div>
