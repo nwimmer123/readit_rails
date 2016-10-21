@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    
     #@book = Book.find(params[:id])
     @review = Review.new(parent_id: params[:parent_id]) 
 
@@ -13,6 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+  
     #@book = Book.find(params[:id])
 		if params[:review][:parent_id].to_i > 0
 	    parent = Review.find_by_id(params[:review].delete(:parent_id))

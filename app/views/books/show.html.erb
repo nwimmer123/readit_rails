@@ -38,7 +38,22 @@ $(document).ready(function() {
   <div class="container addReview">
     <h2>Reviews and Discussion</h2>
 
-    <%= render 'form' %>
+    <%= form_for :review, url: reviews_path  do |f|%>
+      <div class="form-group">
+        <%= f.text_area :body, required: true, class: "form-control"%>
+        <%= f.hidden_field :book_id, value: params[:id] %>
+        <%= f.hidden_field :user_id, value: @book.user.id %>
+        <%= f.hidden_field :parent_id %>
+
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box(:spoiler) %>
+        <%= label_tag( "SPOILER ALERT") %>
+        <%= f.submit "SUBMIT", class: "btn btn-primary pull-right" %>
+      </div>
+
+    <% end %>
 
   </div>
 
@@ -46,19 +61,22 @@ $(document).ready(function() {
     <button class="btn btn-danger" id="show_spoilers">Show Spoilers</button>
   </div>
 
-  <%= reviews_tree_for @reviews %>
+   <div class="container">
 
+    <p>Click the button below to start a new thread:</p>
+    <p>
+      <%= link_to 'Add new topic', new_review_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+
+
+<%= reviews_tree_for @reviews %>
+<%
+=begin %>
   <div class="container">
     <% @reviews.each do |review| %>
       <% if review.book_id.to_s == params[:id].to_s %>
         <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
-
-          
-
-
-        
-<%
-=begin %> WORKING NON NESTED REVIEW CODE
 
         <div class="review <%= review_class%>">
           <strong><%= review.user.name %></strong>
@@ -67,12 +85,11 @@ $(document).ready(function() {
             <% end %>
           <p><%= review.body %></p>
 
-<%
-=end %>
-    
         </div>
       <% end %>
     <% end %>
   </div>
 
 </div>
+<%
+=end %>

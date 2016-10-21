@@ -1,8 +1,6 @@
     class BooksController < ApplicationController
 
-      before_action :current_book, only: [:show, :edit, :update, :destroy, :show_reviews, :show_spoilers, :show_all]
-
-      before_action :get_reviews, only: [:show_reviews, :show_spoilers, :show_all]
+      before_action :current_book, only: [:show, :edit, :update, :destroy]
 
       def index
         @books = Book.all
@@ -21,7 +19,7 @@
 
       def show
         @user = current_user
-        @reviews = Review.all
+        @reviews = Review.hash_tree
       end
 
       def edit
@@ -48,6 +46,5 @@
       def current_book
         @book = Book.find_by_id(params[:id])
       end
-
 
     end
