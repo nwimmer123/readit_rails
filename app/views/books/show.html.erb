@@ -34,7 +34,8 @@ $(document).ready(function() {
     <p><b>Publisher: </b><%= @book.publisher %></p>
     <p><b>Synopsis: </b><%= @book.synopsis %></p>
   </ul>
-
+<%
+=begin %>
   <div class="container addReview">
     <h2>Reviews and Discussion</h2>
 
@@ -61,6 +62,7 @@ $(document).ready(function() {
     <button class="btn btn-danger" id="show_spoilers">Show Spoilers</button>
   </div>
 
+
    <div class="container">
 
     <p>Click the button below to start a new thread:</p>
@@ -69,10 +71,8 @@ $(document).ready(function() {
     </p>
   </div>
 
-
 <%= reviews_tree_for @reviews %>
-<%
-=begin %>
+
   <div class="container">
     <% @reviews.each do |review| %>
       <% if review.book_id.to_s == params[:id].to_s %>

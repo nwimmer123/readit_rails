@@ -24,6 +24,16 @@ I have always wanted to have a way to discuss books and comics with my friends w
 
 There are many planned additions to this site.
 
+### Social ###
+* Login with Facebook.
+* Invite friends to join.
+* Have "reading buddies".
+* Click on someone and see their profile.
+
+### User Profile ###
+* Currently reading tag, with the date that the reader is currently on.
+* The currently reading book will be on the top of the profile.
+
 ### Automated Book Info ###
 * Entering many fields of info is annoying.
 * When creating a new book entry, entering the title of the book will autopopulate the rest of the book fields. 
