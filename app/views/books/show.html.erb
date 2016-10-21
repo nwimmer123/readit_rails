@@ -34,12 +34,11 @@ $(document).ready(function() {
     <p><b>Publisher: </b><%= @book.publisher %></p>
     <p><b>Synopsis: </b><%= @book.synopsis %></p>
   </ul>
-<%
-=begin %>
+
   <div class="container addReview">
     <h2>Reviews and Discussion</h2>
 
-    <%= form_for :review, url: reviews_path  do |f|%>
+    <%= form_for :review, url: book_path  do |f|%>
       <div class="form-group">
         <%= f.text_area :body, required: true, class: "form-control"%>
         <%= f.hidden_field :book_id, value: params[:id] %>
@@ -72,7 +71,8 @@ $(document).ready(function() {
   </div>
 
 <%= reviews_tree_for @reviews %>
-
+<% 
+=begin %>
   <div class="container">
     <% @reviews.each do |review| %>
       <% if review.book_id.to_s == params[:id].to_s %>
@@ -89,7 +89,7 @@ $(document).ready(function() {
       <% end %>
     <% end %>
   </div>
-
-</div>
 <%
 =end %>
+
+</div>

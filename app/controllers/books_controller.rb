@@ -19,9 +19,8 @@
 
       def show
         @user = current_user
-        #@reviews = Review.hash_tree
-        @reviews = Review.all
-
+        @reviews = Review.hash_tree
+    
       end
 
       def edit
