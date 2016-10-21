@@ -24,12 +24,12 @@ class ReviewsController < ApplicationController
 
     if @review.save
 	    flash[:success] = 'Your comment was successfully added!'
-	    redirect_to reviews_path
+	    #redirect_to reviews_path
 	  else
 	    render 'new'
 	  end
 
-		#redirect_to book_path(@book)
+		redirect_to book_path(@book)
   end
 
   	private
