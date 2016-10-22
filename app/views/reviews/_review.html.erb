@@ -1,7 +1,7 @@
 <% if review.book_id.to_s == params[:id].to_s %>
   <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
 
-  <div class="well <%= review_class%>">
+  <div class="review container <%= review_class%>">
     
     <p class="text-muted">Added by <strong><%= @book.user.name %></strong> on
       <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
@@ -19,6 +19,5 @@
     <% end %>
 
   </div>
-
 
 <% end %>
