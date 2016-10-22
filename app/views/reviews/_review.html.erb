@@ -1,18 +1,20 @@
-<div class="well">
-  
-  <p class="text-muted">Added by <strong><%= @book.user.name %></strong> on
-    <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+<% if review.book_id.to_s == params[:id].to_s %>
+  <div class="well">
+    
+    <p class="text-muted">Added by <strong><%= @book.user.name %></strong> on
+      <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
-  <blockquote>
-    <p><%= review.body %></p>
-  </blockquote>
+    <blockquote>
+      <p><%= review.body %></p>
+    </blockquote>
 
-	<% from_reply_form ||= nil %>
-	<% unless from_reply_form %>
-    <% if review.leaf? %>
-      <small class="text-muted">There are no replies yet - be the first one to reply!</small  >
+    <% from_reply_form ||= nil %>
+    <% unless from_reply_form %>
+      <% if review.leaf? %>
+        <small class="text-muted">There are no replies yet - be the first one to reply!</small  >
+      <% end %>
+      <p><%= link_to 'reply', new_review_path(@book.id, review.id) %></p>
     <% end %>
-    <p><%= link_to 'reply', new_review_path(@book.id, review.id) %></p>
-  <% end %>
 
-</div>
+  </div>
+<% end %>
