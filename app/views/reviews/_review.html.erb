@@ -1,6 +1,6 @@
 <div class="well">
   
-  <p class="text-muted">Added by <strong><%= review.user %></strong> on
+  <p class="text-muted">Added by <strong><%= @book.user.name %></strong> on
     <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
   <blockquote>
