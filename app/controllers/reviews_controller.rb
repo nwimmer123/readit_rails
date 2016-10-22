@@ -8,8 +8,6 @@ class ReviewsController < ApplicationController
   def new
     @book = Book.find(params[:id])
     @review = Review.new(parent_id: params[:parent_id]) 
-
-    #redirect_to new_review_path
   end
 
   def create

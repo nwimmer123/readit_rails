@@ -29,6 +29,7 @@ There are many planned additions to this site.
 * Invite friends to join.
 * Have "reading buddies".
 * Click on someone and see their profile.
+* Get a notification when someone posts in a book you've posted or responds inside your thread.
 
 ### User Profile ###
 * Currently reading tag, with the date that the reader is currently on.
