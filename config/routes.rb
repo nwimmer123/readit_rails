@@ -26,9 +26,4 @@ Rails.application.routes.draw do
   get "/books/:id/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
   post "/books/:id/reviews", to: "reviews#create"
 
-  # get "/reviews", to: "reviews#index", as: "reviews"
-  # get "/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
-  # post "/reviews", to: "reviews#create"
-  
-
 end

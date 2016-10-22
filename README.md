@@ -33,6 +33,7 @@ There are many planned additions to this site.
 ### User Profile ###
 * Currently reading tag, with the date that the reader is currently on.
 * The currently reading book will be on the top of the profile.
+* Allow users to upload avatar pictures that sit next to their reviews.
 
 ### Automated Book Info ###
 * Entering many fields of info is annoying.

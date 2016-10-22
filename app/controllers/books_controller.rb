@@ -20,9 +20,6 @@
       def show
         @user = current_user
         @reviews = Review.hash_tree
-        #@reviews = Review.all
-        #@reviews = Review.find_by(book_id: current_book)
-    
       end
 
       def edit
