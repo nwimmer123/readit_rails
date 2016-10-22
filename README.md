@@ -45,9 +45,6 @@ There are many planned additions to this site.
 * The rank options will be:  Worst Ever, Bad, Ehhh, Good, GOAT.
 * A detailed graph of all votes per category will be shown via a button click.
 
-### Nested Comments ###
-* Users will be able to respond to other users comments leading to a nested comments section.
-
 ### Search Capability ###
 * Users will be able to search the book recommendations by the different fields.
 
