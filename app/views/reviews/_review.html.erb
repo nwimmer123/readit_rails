@@ -4,7 +4,11 @@
   <div class="review container <%= review_class%>">
     
     <p class="text-muted">Added by <strong><%= @book.user.name %></strong> on
-      <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+      <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %>
+      <% if review.spoiler == "1" %>
+        -- SPOILER
+      <% end %>
+    </p>
 
     <blockquote>
       <p><%= review.body %></p>
