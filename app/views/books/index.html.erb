@@ -16,17 +16,19 @@
   <ul class="list-group" id="books-list">
     
     <% @books.each do |book| %>
-      <%= link_to book do %>
+  
 
         <li class="list-group-item book" >
-          <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
-          <p><b>Contributor: </b><%= book.user.name %></p>
+          <%= link_to book do %>
+            <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
+          <% end %>
+          <p><b>Contributor: </b> <%= link_to book.user.name, user_path(book.user.id) %> </p>
           <p><b>Title: </b><%= book.title %></p>
           <p><b>Author: </b><%= book.author %></p>
           <p><b>Genre: </b><%= book.genre %></p>
         </li>
         
-      <% end %>
+      
     <% end %>
   
   </ul>   

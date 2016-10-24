@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :logged_in?, only: [:edit, :update]
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:edit, :update]
 
   def index
   end
@@ -21,7 +21,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @books = Book.find_by_user_id(current_user.id)
+    @user = User.find_by_id(params[:id])
+    @books= Book.all
+    #@books = Book.find_by_user_id(current_user.id)
   end
 
   def edit
