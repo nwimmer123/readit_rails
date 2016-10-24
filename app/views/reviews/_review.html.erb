@@ -18,9 +18,9 @@
       <% from_reply_form ||= nil %>
       <% unless from_reply_form %>
         <% if review.leaf? %>
-          <small class="text-muted">There are no replies yet - be the first one to reply!</small  >
+          <small class="text-muted">There are no responses yet - be the first one to respond!</small  >
         <% end %>
-        <p><%= link_to 'reply', new_review_path(@book.id, review.id) %></p>
+        <p><%= link_to 'respond', new_review_path(@book.id, review.id) %></p>
       <% end %>
 
     </div>
