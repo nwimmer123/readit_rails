@@ -1,29 +1,31 @@
 
-  <% if review.book_id.to_s == params[:id].to_s %>
-    <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
+<% if review.book_id.to_s == params[:id].to_s %>
+  <% review_class = review.spoiler == "1" ? ' spoiler' : ' spoiler-free' %>
 
-    <div class="review container <%= review_class%>">
-      
-      <p class="text-muted">Added by <strong><%= review.user.name %></strong> on
-        <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %>
-        <% if review.spoiler == "1" %>
-          -- SPOILER
-        <% end %>
-      </p>
+  <div class="review container <%= review_class%>">
+    
+    <p class="text-muted">Added by <strong><%= review.user.name %></strong> on
+      <%= l(review.created_at, format: '%B, %d %Y %H:%M:%S') %>
+      <% if review.spoiler == "1" %>
+        -- SPOILER
+      <% end %>
+    </p>
 
-      <blockquote>
-        <p><%= review.body %></p>
-      </blockquote>
+    <blockquote>
+      <p><%= review.body %></p>
+    </blockquote>
 
-      <% from_reply_form ||= nil %>
-      <% unless from_reply_form %>
-        <% if review.leaf? %>
-          <small class="text-muted">There are no responses yet - be the first one to respond!</small  >
-        <% end %>
+    <% from_reply_form ||= nil %>
+    <% unless from_reply_form %>
+      <% if review.leaf? %>
+        <small class="text-muted">There are no responses yet - be the first one to respond!</small  >
+      <% end %>
+      <% if current_user%>
         <p><%= link_to 'respond', new_review_path(@book.id, review.id) %></p>
       <% end %>
+    <% end %>
 
-    </div>
+  </div>
 
-  <% end %>
+<% end %>
 
