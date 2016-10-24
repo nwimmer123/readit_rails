@@ -6,6 +6,7 @@
     <br>
     Email: <%= @user.email %></h4>
     <% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
+      <%= link_to "Add Book", new_book_path, class: "btn btn-primary btn-lg pull-right" %>
       <%= button_to "Edit Profile", edit_user_path(@user.id), method: "get", class: "btn btn-primary col-xs-2" %>
       <%= button_to "Delete", url_for(action: :destroy, id: @user.id),method: :delete, data: {confirm: "Are you sure you want to delete yourself and all your wonderfull books and reviews that are read by so many of our delighted users?"}, class: "btn btn-danger col-xs-2" %>
     <% end %>
