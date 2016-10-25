@@ -11,4 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-/config
+config/secrets.yml
+config/aws.yml
