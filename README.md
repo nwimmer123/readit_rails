@@ -28,7 +28,6 @@ There are many planned additions to this site.
 * Login with Facebook.
 * Invite friends to join.
 * Have "reading buddies".
-* Click on someone and see their profile.
 * Get a notification when someone posts in a book you've posted or responds inside your thread.
 
 ### User Profile ###
