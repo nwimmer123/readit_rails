@@ -7,5 +7,7 @@ class Book < ActiveRecord::Base
     self.save    
   end
 
+
+
 end
 
