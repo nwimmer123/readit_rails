@@ -14,19 +14,32 @@
           </div>
 
           <div class="form-group">
-            <label class="col-md-4 control-label" for="author">Author</label>
-            <div class="col-md-8">
-              <%= f.text_field :author, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-
-          <div class="form-group">
             <label class="col-md-4 control-label" for="genre">Genre</label>
             <div class="col-md-8">
               <%= f.select :genre, [["Sci-fi", "Sci-fi"], ["Fantasy", "Fantasy"], ["Comic", "Comic"], ["Manga", "Manga"]], class: "form-control" %>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <%= f.submit "Create Book", class: "btn btn-success" %>
+            </div>
+          </div>
           
+        </fieldset>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+<%
+=begin%>  
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="author">Author</label>
+            <div class="col-md-8">
+              <%= f.text_field :author, required: true, class: "form-control" %><br>
+            </div>
+          </div>
 
           <div class="form-group">
             <label class="col-md-4 control-label" for="image">Image Url</label>
@@ -55,16 +68,6 @@
               <%= f.text_area :synopsis, required: true, class: "form-control" %><br>
             </div>
           </div>
+<%
+=end%>
 
-          <div class="form-group">
-            <div class="col-md-12">
-              <%= f.submit "Create Book", class: "btn btn-success" %>
-            </div>
-          </div>
-          
-        </fieldset>
-      <% end %>
-
-    </div>
-  </div>
-</div>
