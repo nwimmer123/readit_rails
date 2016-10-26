@@ -6,7 +6,7 @@ require "openssl"
 
 class Book < ActiveRecord::Base
 
-  SECRET_KEY = Figaro.env.google_books.to_s
+  SECRET_KEY = Figaro.env.google_books
   belongs_to :user
   has_many :reviews
   
