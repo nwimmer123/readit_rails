@@ -15,7 +15,6 @@ class BooksController < ApplicationController
     genre = params[:book][:genre]
     @user = current_user
     user = @user.id
-    #Book.find_book(tempBook, tempGenre, tempId)
     find_book
     redirect_to root_path
   end

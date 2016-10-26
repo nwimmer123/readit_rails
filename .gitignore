@@ -12,5 +12,6 @@
 !/log/.keep
 /tmp
 config/secrets.yml
-config/aws.yml
-.aws
+
+# Ignore application configuration
+/config/application.yml
