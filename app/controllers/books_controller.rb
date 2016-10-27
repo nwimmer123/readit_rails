@@ -31,6 +31,10 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @reviews = Review.where(book_id: @book.id)
+    @reviews.each do |review|
+      review.destroy
+    end
     @book.destroy
     redirect_to user_path(@user.id)
   end

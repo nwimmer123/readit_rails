@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
 
   SECRET_KEY = Figaro.env.google_books
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   def self.book_url(book_name)
     "https://www.googleapis.com/books/v1/volumes?q=#{book_name}&key=#{SECRET_KEY}"
