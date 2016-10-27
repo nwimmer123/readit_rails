@@ -9,12 +9,11 @@
 
 The purpose of Read It is for friends to be able to share book recommendations and discuss their favorite books in the reviews section.  Users can add any book they think their friends should read. Users can peruse the list of books recommended by their friends and if they would like more information, they can click on it to see more info. When they do so, they will also see reviews left by friends and they will be able to add their own reviews or discussion points.
 
+## Current Features ##
 
-## Screenshots ##
-
-The Home Page
-
-![alt tag](http://i.imgur.com/JHTeHes.png)
+* User login/auth
+* Nested comments
+* Autopoultaed forms using Google Books API
 
 ## Motivation 
 
@@ -34,10 +33,6 @@ There are many planned additions to this site.
 * Currently reading tag, with the date that the reader is currently on.
 * The currently reading book will be on the top of the profile.
 * Allow users to upload avatar pictures that sit next to their reviews.
-
-### Automated Book Info ###
-* Entering many fields of info is annoying.
-* When creating a new book entry, entering the title of the book will autopopulate the rest of the book fields. 
 
 ### Book rating system ###
 * Users will be able to rank books. Each user will be allowed to rank a book once.
