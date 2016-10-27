@@ -22,11 +22,13 @@ class Book < ActiveRecord::Base
   def self.find_book(user, book_name, genre)
     book_data = fetch_book_data(book_name)
     the_book = book_data["items"][0]["volumeInfo"]
+    authors = []
     b = Book.new
     b.user_id = user.id
     b.title = the_book["title"]
     b.genre = genre
-    b.author = the_book["authors"]
+    authors = the_book["authors"]
+    b.author = authors.join(", ")
     b.publisher =  the_book["publisher"]
     b.publication_date =  the_book["publishedDate"]
     b.synopsis =  the_book["description"]
