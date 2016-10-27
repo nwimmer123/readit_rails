@@ -15,6 +15,13 @@ class Book < ActiveRecord::Base
     self.save    
   end
 
+# http://beta.comicvine.com/api/volumes/?q=infinity%20gauntlet&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356
+# http://api.comicvine.com/volumes/?q=infinity%20gauntlet&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356
+
+  def self.comic_url
+    "http://api.comicvine.com/character?q=spiderman&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356"
+  end
+  
   def self.book_url(book_name)
     "https://www.googleapis.com/books/v1/volumes?q=#{book_name}&key=#{SECRET_KEY}"
   end
