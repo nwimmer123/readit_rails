@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
 
+	before_action :set_user, only: [:index, :create]
+
+
   def index
-    @user = current_user
     @reviews = Review.hash_tree
   end
 
@@ -11,7 +13,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-		@user = current_user
     @book = Book.find(params[:id])
 		if params[:review][:parent_id].to_i > 0
 	    parent = Review.find_by_id(params[:review].delete(:parent_id))
@@ -29,9 +30,14 @@ class ReviewsController < ApplicationController
 		redirect_to book_path(@book)
   end
 
-  	private
+  private
+
 		def review_params
 			params.require(:review).permit(:body, :spoiler, :book_id, :user_id)
 		end
+
+		# def set_user
+		# 	@user = current_user	
+		# end
 
 end

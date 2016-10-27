@@ -8,7 +8,6 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
   end
 
   def create
@@ -28,7 +27,7 @@ class BooksController < ApplicationController
 
   def update
     @book.update_attributes(book_params)
-    redirect_to user_path
+    redirect_to user_path(@user.id)
   end
 
   def destroy
@@ -48,10 +47,6 @@ class BooksController < ApplicationController
 
   def find_book
     @book = Book.find_book(current_user, params[:book][:title], params[:book][:genre])
-  end
-
-  def set_user
-    @user = current_user
   end
 
 end
