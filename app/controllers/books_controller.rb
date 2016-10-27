@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   before_action :current_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:create, :show, :update, :destroy]
 
   def index
     @books = Book.all
@@ -13,14 +14,12 @@ class BooksController < ApplicationController
   def create
     book_name = params[:book][:title]
     genre = params[:book][:genre]
-    @user = current_user
     user = @user.id
     find_book
     redirect_to root_path
   end
 
   def show
-    @user = current_user
     @reviews = Review.hash_tree
   end
 
@@ -28,13 +27,11 @@ class BooksController < ApplicationController
   end
 
   def update
-    @user = current_user
     @book.update_attributes(book_params)
     redirect_to user_path
   end
 
   def destroy
-    @user = current_user
     @book.destroy
     redirect_to user_path(@user.id)
   end
@@ -51,6 +48,10 @@ class BooksController < ApplicationController
 
   def find_book
     @book = Book.find_book(current_user, params[:book][:title], params[:book][:genre])
+  end
+
+  def set_user
+    @user = current_user
   end
 
 end
