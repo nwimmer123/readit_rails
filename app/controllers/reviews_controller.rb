@@ -36,8 +36,4 @@ class ReviewsController < ApplicationController
 			params.require(:review).permit(:body, :spoiler, :book_id, :user_id)
 		end
 
-		# def set_user
-		# 	@user = current_user	
-		# end
-
 end

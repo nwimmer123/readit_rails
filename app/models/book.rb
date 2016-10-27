@@ -1,6 +1,5 @@
 require "net/http"
 require "json"
-
 require "openssl"
 #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
@@ -9,18 +8,6 @@ class Book < ActiveRecord::Base
   SECRET_KEY = Figaro.env.google_books
   belongs_to :user
   has_many :reviews
-  
-  def set_user(user)
-    self.user_id = user.id 
-    self.save    
-  end
-
-# http://beta.comicvine.com/api/volumes/?q=infinity%20gauntlet&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356
-# http://api.comicvine.com/volumes/?q=infinity%20gauntlet&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356
-
-  def self.comic_url
-    "http://api.comicvine.com/character?q=spiderman&key=3f5da82c5f0ad7044ab2b6859cc24683dfc91356"
-  end
 
   def self.book_url(book_name)
     "https://www.googleapis.com/books/v1/volumes?q=#{book_name}&key=#{SECRET_KEY}"
@@ -34,22 +21,18 @@ class Book < ActiveRecord::Base
 
   def self.find_book(user, book_name, genre)
     book_data = fetch_book_data(book_name)
-    if book_data
-      the_book = book_data["items"][0]["volumeInfo"]
-      b = Book.new
-      b.user_id = user.id
-      b.title = the_book["title"]
-      b.genre = genre
-      b.author = the_book["authors"]
-      b.publisher =  the_book["publisher"]
-      b.publication_date =  the_book["publishedDate"]
-      b.synopsis =  the_book["description"]
-      b.image = the_book["imageLinks"]["thumbnail"]
-      b.save
-      b
-    else
-      flash[:error] = "This book is misspelled or does not exist in the Google Books API. Sorry!"
-    end
+    the_book = book_data["items"][0]["volumeInfo"]
+    b = Book.new
+    b.user_id = user.id
+    b.title = the_book["title"]
+    b.genre = genre
+    b.author = the_book["authors"]
+    b.publisher =  the_book["publisher"]
+    b.publication_date =  the_book["publishedDate"]
+    b.synopsis =  the_book["description"]
+    b.image = the_book["imageLinks"]["thumbnail"]
+    b.save
+    b
   end   
 
 end
