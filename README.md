@@ -41,6 +41,7 @@ There are many planned additions to this site.
 
 ### Search Capability ###
 * Users will be able to search the book recommendations by the different fields.
+* Users will see a list of all titles when adding a book and can select the exact one they like.
 
 ### Site Organization ###
 * The default setting will be for the books to be displayed based on the date of submission, with the most recent submissions appearing on the top.

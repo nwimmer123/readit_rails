@@ -28,46 +28,28 @@
           
         </fieldset>
       <% end %>
+      
+      <%= @book_data %> 
+      
+      <ul class="list-group" id="books-list">
+        <% if @book_data%>
+          <% @book_data.each do |data| %>
+            <%= data %>
+              <li class="list-group-item book" >
+                <% the_book = book_data["items"][data]["volumeInfo"]  %>
+                <img alt="Book Jacket" class="homepageImages" src=<%= the_book["imageLinks"]["thumbnail"] %> >
+                <p><b>Title: </b><%= the_book["title"] %></p>
+                <% authors = the_book["authors"] %>
+                <p><b>Author: </b><%= authors.join(", ") %></p>
+                <p><b>Publisher: </b> <%= the_book["publisher"] %></p>
+                <p><b>Date Published: </b> <%= the_book["publishedDate"] %></p>
+                <p><b>Synopsis: </b><%= the_book["description"] %></p>
+            </li>
+          <% end %> 
+        <% end %>
+      </ul>
 
     </div>
   </div>
 </div>
-<%
-=begin%>  
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="author">Author</label>
-            <div class="col-md-8">
-              <%= f.text_field :author, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="image">Image Url</label>
-            <div class="col-md-8">
-              <%= f.text_field :image, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="publication_date">Publication Date</label>
-            <div class="col-md-8">
-              <%= f.text_field :publication_date, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="publisher">Publisher</label>
-            <div class="col-md-8">
-              <%= f.text_field :publisher, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="synopsis">Synopsis</label>
-            <div class="col-md-8">
-              <%= f.text_area :synopsis, required: true, class: "form-control" %><br>
-            </div>
-          </div>
-<%
-=end%>
 

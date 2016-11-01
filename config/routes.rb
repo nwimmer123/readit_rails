@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
 
+  get "/books/search", to: "books#search", as: "search_book"
+  post "/books/search", to: "books#search_now"
+
   get "/books", to: "books#index", as: "books"
   get "/books/new", to: "books#new", as: "new_book"
   post "/books", to: "books#create"
@@ -21,6 +24,8 @@ Rails.application.routes.draw do
   get "/books/:id/edit", to: "books#edit", as: "book_edit"
   patch "/books/:id", to: "books#update"
   delete "/books/:id", to: "books#destroy", as: "delete_book"
+
+
 
   get "/books/:id/reviews", to: "reviews#index", as: "reviews"
   get "/books/:id/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
