@@ -7,27 +7,16 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-    def new
-    end
-
-    def search
-    end
-
-    def search_now
-      book_name = params[:book][:title]
-      display_results
-      
-      redirect_to new_book_path
-    end  
-
-    def create
-      book_name = params[:book][:title]
-      genre = params[:book][:genre]
-      user = @user.id
-      #display_results
-      #find_book
-      redirect_to root_path
-    end
+  def new
+  end
+ 
+  def create
+    book_name = params[:book][:title]
+    genre = params[:book][:genre]
+    user = @user.id
+    find_book
+    redirect_to root_path
+  end
 
   def show
     @reviews = Review.hash_tree
@@ -63,10 +52,5 @@ class BooksController < ApplicationController
   def find_book
     @book = Book.find_book(current_user, params[:book][:title], params[:book][:genre])
   end
-
-  def display_results
-    @book_data = Book.display_results(params[:book][:title])
-  end
-
 
 end

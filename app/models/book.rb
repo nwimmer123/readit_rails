@@ -1,27 +1,28 @@
 require "net/http"
 require "json"
 require "openssl"
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+#OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 class Book < ActiveRecord::Base
 
-  SECRET_KEY = Figaro.env.google_books
   belongs_to :user
   has_many :reviews, dependent: :destroy
 
-    def self.book_url(book_name)
-      "https://www.googleapis.com/books/v1/volumes?q=#{book_name}&key=#{SECRET_KEY}"
-    end
+  SECRET_KEY = Figaro.env.google_books
 
-    def self.fetch_book_data(book_name)
-      uri = URI(book_url(book_name))
-      response = Net::HTTP.get(uri)
-      JSON.parse(response)    
-    end
+  def self.book_url(book_name)
+    "https://www.googleapis.com/books/v1/volumes?q=#{book_name}&key=#{SECRET_KEY}"
+  end
 
-    def self.display_results(book_name)
-      @book_data = fetch_book_data(book_name)
-    end 
+  def self.fetch_book_data(book_name)
+    uri = URI(book_url(book_name))
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)    
+  end
+
+  def self.display_results(book_name)
+    @book_data = fetch_book_data(book_name)
+  end 
 
   def self.find_book(user, book_name, genre)
     book_data = fetch_book_data(book_name)

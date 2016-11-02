@@ -7,7 +7,7 @@
 <!-- Checks to see if someone is logged in prior to displaying button -->
 <% if current_user %> 
   <div class="container">
-    <%= link_to "Add Book", search_book_path, class: "btn btn-primary btn-lg pull-right" %></div>
+    <%= link_to "Add Book", new_book_path, class: "btn btn-primary btn-lg pull-right" %></div>
   </div>
 <% end %>
 
