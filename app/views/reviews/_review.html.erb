@@ -14,6 +14,11 @@
       <p><%= review.body %></p>
     </blockquote>
 
+      <% if review.user.id == session[:user_id] %>
+        <%= button_to "Edit", review_edit_path(@book.id, review.id), method: "get", class: "pull-right btn btn-primary col-xs-2" %>
+        <%= button_to "Delete", delete_review_path(@book.id, review.id),method: :delete, data: {confirm: "Are you sure you want to delete ythis review?"}, class: "btn btn-danger col-xs-2 pull-right" %>
+    <% end %>
+
     <% from_reply_form ||= nil %>
     <% unless from_reply_form %>
       <% if review.leaf? %>
@@ -23,7 +28,10 @@
         <p><%= link_to 'respond', new_review_path(@book.id, review.id) %></p>
       <% end %>
     <% end %>
+  
 
-  </div>
+
+
+</div>
 
 <% end %>
