@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
 	  else
 	    render 'new'
 	  end
-		
+
 		redirect_to book_path(@book)
   end
 
@@ -34,6 +34,8 @@ class ReviewsController < ApplicationController
 	end
 
 	def update
+		@review = Review.find_by_id(params[:review][:id])
+		@review.update_attributes(review_params)
 	end
 
 	def destroy
