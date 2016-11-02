@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
 
 	before_action :set_user, only: [:index, :create]
 
-
   def index
     @reviews = Review.hash_tree
   end
@@ -12,13 +11,15 @@ class ReviewsController < ApplicationController
     @review = Review.new(parent_id: params[:parent_id]) 
   end
 
-  def create
+  def create	
     @book = Book.find(params[:id])
 		if params[:review][:parent_id].to_i > 0
 	    parent = Review.find_by_id(params[:review].delete(:parent_id))
 	    @review = parent.children.build(review_params)
+			@review.user = current_user
 	  else
 	    @review = Review.new(review_params)
+			@review.user = current_user
 	  end
 
     if @review.save
