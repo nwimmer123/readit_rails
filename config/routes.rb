@@ -22,11 +22,11 @@ Rails.application.routes.draw do
   patch "/books/:id", to: "books#update"
   delete "/books/:id", to: "books#destroy", as: "delete_book"
 
-  get "/books/:id/reviews", to: "reviews#index", as: "reviews"
-  get "/books/:id/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
-  post "/books/:id/reviews", to: "reviews#create"
-  get "/books/:id/reviews/edit", to: "reviews#edit", as: "review_edit"
-  patch "/books/:id/reviews", to: "reviews#update"
-  delete "/books/:id/reviews/:id", to: "reviews#destroy", as: "delete_review"
+  get "/books/:book_id/reviews", to: "reviews#index", as: "reviews"
+  get "/books/:book_id/reviews/new/(:parent_id)", to: "reviews#new", as: "new_review"
+  post "/books/:book_id/reviews", to: "reviews#create"
+  get "/books/:book_id/reviews/:id/edit", to: "reviews#edit", as: "edit_book_review"
+  patch "/books/:book_id/reviews/:id", to: "reviews#update"
+  delete "/books/:book_id/reviews/:id", to: "reviews#destroy", as: "delete_book_review"
 
 end

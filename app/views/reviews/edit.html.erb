@@ -6,7 +6,7 @@
 
         <%= f.text_area :body, required: true, class: "form-control"%>
         <%= f.hidden_field :book_id, value: params[:id] %>
-        <%= f.hidden_field :user_id, value: @book.user.id %>
+      
         <%= f.hidden_field :parent_id %>
 
         <div class="form-group">
