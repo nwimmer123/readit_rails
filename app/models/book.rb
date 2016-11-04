@@ -33,6 +33,9 @@ class Book < ActiveRecord::Base
     b.title = the_book["title"]
     b.genre = genre
     authors = the_book["authors"]
+    if authors.nil?
+      authors = ["No listed author"]
+    end
     b.author = authors.join(", ")
     b.publisher =  the_book["publisher"]
     b.publication_date =  the_book["publishedDate"]
