@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
 
 	def update
 		@review.update_attributes(review_params)
+		redirect_to book_path(@book)
 	end
 
 	def destroy
@@ -53,6 +54,6 @@ class ReviewsController < ApplicationController
 		end
 
 		def current_review
-			@review = Review.find_by_id(params[:review_id])
+			@review = Review.find_by_id(params[:id])
 		end
 end
