@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
 	before_action :set_user, only: [:index, :create]
-	before_action :set_book, only: [:new, :create, :edit, :update]
+	before_action :set_book, only: [:new, :create, :edit, :update, :destroy]
 	before_action :current_review, only: [:edit, :update, :destroy]
 
 	def index
@@ -41,6 +41,7 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		@review.destroy
+		redirect_to book_path(@book)
 	end
 
 	private
