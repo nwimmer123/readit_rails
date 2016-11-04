@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
 		end
 
 		def set_book
-			@book = Book.find_by_id(params[:id])
+			@book = Book.find_by_id(params[:book_id])
 		end
 
 		def current_review
