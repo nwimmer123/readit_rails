@@ -44,7 +44,6 @@ There are many planned additions to this site.
 * Users will see a list of all titles when adding a book and can select the exact one they like.
 
 ### Site Organization ###
-* The default setting will be for the books to be displayed based on the date of submission, with the most recent submissions appearing on the top.
 * Once a ratings system is in place, then the books will be ranked by highest rankings.
 
 ### Social Book Discussion ###
@@ -54,5 +53,7 @@ There are many planned additions to this site.
 * Users will be able to set their discussion to public or private.
 * If setting is public, anyone searching for an ongoing discussion group of the same book will be able to join it.
 
+### Site Expansion ###
 
-
+* Users can also review and discuss TV shows and Movies which will be incorporated into view
+* Page layout will change w a central thread for general commenting, with side 'rooms' for book, TV and Movie discussions

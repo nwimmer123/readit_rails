@@ -2,10 +2,8 @@
 
 $(document).ready(function() {
 
-  console.log("In JS Script");
   var randomNum = Math.floor((Math.random()*30)+1);
   var backgroundUrl = '/images/images' + randomNum + '.jpg';
-  console.log(backgroundUrl);
   $('.showpage').css("background", "url(" + backgroundUrl + ") no-repeat center center");
 
   $(".spoiler").hide();
