@@ -29,4 +29,9 @@ Rails.application.routes.draw do
   patch "/books/:book_id/reviews/:id", to: "reviews#update"
   delete "/books/:book_id/reviews/:id", to: "reviews#destroy", as: "delete_book_review"
 
+  get "/search", to: "search#index", as: "search"
+  get "/search/new", to: "search#new", as: "new_search"
+  post "/search", to: "search#ceate"
+
+
 end
