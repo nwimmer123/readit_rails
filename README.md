@@ -12,10 +12,10 @@ The purpose of Read It is for friends to be able to share book recommendations a
 ## Current Features ##
 
 * User login/auth
-* Nested comments
+* Nested comments with edit
 * Autopoultaed forms using Google Books API
 
-## Motivation 
+## Motivation
 
 I have always wanted to have a way to discuss books and comics with my friends with whom I share similar reading tastes. I am also always seeking out good book recommendations from people I know. Many of my friends who meet these criteria live far away from me. Also, whenever I finish a book I have really enjoyed, I want to share it with others so that I can talk about the different plot points I found intriguing. Therefore, I wanted to make a site where I could do these things.  Once all the planned improvements are complete, then my vision will have been achieved.
 

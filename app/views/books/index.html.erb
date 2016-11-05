@@ -21,7 +21,8 @@
           <%= link_to book do %>
             <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
           <% end %>
-          <p><b>Contributor: </b> <%= link_to book.user.name, user_path(book.user.id) %> </p>
+          <p><b>Added: </b><%= l(book.created_at, format: '%B, %d %Y') %></p>
+          <p><b>Contributor: </b><%= link_to book.user.name, user_path(book.user.id) %> </p>
           <p><b>Title: </b><%= book.title %></p>
           <p><b>Author: </b><%= book.author %></p>
           <p><b>Genre: </b><%= book.genre %></p>
