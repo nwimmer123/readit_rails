@@ -5,6 +5,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @books = @books.order(created_at: :desc)
   end
 
   def new
