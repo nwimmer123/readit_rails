@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
 
-  get "/books/search", to: "books#search", as: "book_search"
-  
   get "/books", to: "books#index", as: "books"
   get "/books/new", to: "books#new", as: "new_book"
   post "/books", to: "books#create"
