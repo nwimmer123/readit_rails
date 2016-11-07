@@ -10,8 +10,11 @@ class SearchController < ApplicationController
 
     def create
       book_name = params[:search][:title]
-      puts "!!!!!!!!!!!" + book_name
+      display_results(book_name)
+      puts "!!!!!!!!!!!!!!#{@book_data}"
+
       redirect_to search_path
     end
+
 
 end
