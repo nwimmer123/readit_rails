@@ -3,6 +3,7 @@ class SearchController < ApplicationController
   before_action :set_user, only: [:create]
 
     def index
+      @book_data
     end
 
     def new
