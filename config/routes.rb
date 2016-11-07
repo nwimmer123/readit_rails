@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   get "/search", to: "search#index", as: "search"
   get "/search/new", to: "search#new", as: "new_search"
-  post "/search", to: "search#ceate"
+  post "/search", to: "search#create"
 
 
 end
