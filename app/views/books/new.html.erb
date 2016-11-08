@@ -29,26 +29,6 @@
         </fieldset>
       <% end %>
       
-
-      
-      <ul class="list-group" id="books-list">
-        <% if @book_data%>
-          <% @book_data.each do |data| %>
-            <%= data %>
-              <li class="list-group-item book" >
-                <% the_book = book_data["items"][data]["volumeInfo"]  %>
-                <img alt="Book Jacket" class="homepageImages" src=<%= the_book["imageLinks"]["thumbnail"] %> >
-                <p><b>Title: </b><%= the_book["title"] %></p>
-                <% authors = the_book["authors"] %>
-                <p><b>Author: </b><%= authors.join(", ") %></p>
-                <p><b>Publisher: </b> <%= the_book["publisher"] %></p>
-                <p><b>Date Published: </b> <%= the_book["publishedDate"] %></p>
-                <p><b>Synopsis: </b><%= the_book["description"] %></p>
-            </li>
-          <% end %> 
-        <% end %>
-      </ul>
-
     </div>
   </div>
 </div>
