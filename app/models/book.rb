@@ -1,7 +1,7 @@
 require "net/http"
 require "json"
 require "openssl"
-# OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 class Book < ActiveRecord::Base
 

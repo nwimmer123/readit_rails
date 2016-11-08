@@ -3,19 +3,27 @@ class SearchController < ApplicationController
   before_action :set_user, only: [:create]
 
     def index
-      @book_data
+      @search = Search.all
     end
 
     def new
     end
 
     def create
+      Search.delete_all
       book_name = params[:search][:title]
-      display_results(book_name)
-      puts "!!!!!!!!!!!!!!#{@book_data}"
+      @search = Search.new(search_params)
+      @search.data = display_results(book_name)
+      @search.save
 
       redirect_to search_path
     end
+
+    private
+
+      def search_params
+        params.require(:search).permit(:data)
+      end
 
 
 end
