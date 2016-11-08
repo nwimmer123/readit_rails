@@ -4,18 +4,18 @@
     <% d.data["items"].each do |i| %>
       <li class="list-group-item book" >
         <% the_book = i["volumeInfo"] %>
-        <% if the_book["imageLinks"]["thumbnail"].nil? %>
-          <% image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png"%>
-        <% else %>
-          <% image = the_book["imageLinks"]["thumbnail"]%>
-        <% end %>
-        <img alt="Book Jacket" class="homepageImages" src=<%= image %> >
+        <img alt="Book Jacket" class="homepageImages" src=<%= the_book["imageLinks"]["thumbnail"] %> >
         <p><b>Title: </b><%= the_book["title"] %></p>
         <% authors = the_book["authors"] %>
+        <% if authors.nil? %>
+          <% authors = ["No Author Listed"] %>
+        <% end %>
         <p><b>Author: </b><%= authors.join(", ") %></p>
         <p><b>Publisher: </b> <%= the_book["publisher"] %></p>
         <p><b>Date Published: </b> <%= the_book["publishedDate"] %></p>
         <p><b>Synopsis: </b><%= the_book["description"] %></p>
+        <%= link_to "Add It", new_book_path, class: "btn btn-primary" %>
+
       </li>
     <% end %>
   <% end %> 

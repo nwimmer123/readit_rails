@@ -13,8 +13,7 @@ module SearchHelper
 
   def fetch_book_data(book_name)
     uri = URI(book_url(book_name))
-    response = Net::HTTP.get(uri)
-    #JSON.parse(response)    
+    response = Net::HTTP.get(uri)  
   end
 
   def display_results(book_name)
