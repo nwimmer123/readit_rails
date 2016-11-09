@@ -13,6 +13,7 @@ The purpose of Read It is for friends to be able to share book recommendations a
 
 * User login/auth
 * Nested comments with edit
+* Search for the book you would like to add using Google Books API
 * Autopoultaed forms using Google Books API
 
 ## Motivation
@@ -41,7 +42,6 @@ There are many planned additions to this site.
 
 ### Search Capability ###
 * Users will be able to search the book recommendations by the different fields.
-* Users will see a list of all titles when adding a book and can select the exact one they like.
 
 ### Site Organization ###
 * Once a ratings system is in place, then the books will be ranked by highest rankings.
