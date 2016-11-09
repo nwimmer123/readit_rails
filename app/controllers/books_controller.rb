@@ -11,11 +11,18 @@ class BooksController < ApplicationController
   def new
   end
  
+  # def create
+  #   book_name = params[:book][:title]
+  #   genre = params[:book][:genre]
+  #   user = @user.id
+  #   find_book
+  #   redirect_to root_path
+  # end
+
   def create
-    book_name = params[:book][:title]
-    genre = params[:book][:genre]
-    user = @user.id
-    find_book
+    @book = Book.new(book_params)
+    @book.user = current_user
+    @book.save
     redirect_to root_path
   end
 

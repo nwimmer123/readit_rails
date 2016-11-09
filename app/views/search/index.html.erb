@@ -34,6 +34,9 @@
         <% if authors.nil? %>
           <% authors = ["No Author Listed"] %>
         <% end %>
+        <% image = the_book["imageLinks"]["thumbnail"] %>
+                
+        <img alt="Book Jacket" class="homepageImages" src=<%= image %> >
 
         <%= form_for :book, url: books_path do |f| %>
           <fieldset>
@@ -44,8 +47,6 @@
                 <%= f.text_field :title, value: the_book["title"], required: true, class: "form-control" %><br>
               </div>
             </div>
-
-
 
             <div class="form-group">
               <label class="col-md-4 control-label" for="name">Author</label>
@@ -82,9 +83,11 @@
               </div>
             </div>
 
+            <%= f.hidden_field :image, value: image%>
+
             <div class="form-group">
               <div class="col-md-12">
-                <%= f.submit "Create Book", class: "btn btn-success" %>
+                <%= f.submit "Create Book", class: "btn btn-success pull-right" %>
               </div>
             </div>
             
