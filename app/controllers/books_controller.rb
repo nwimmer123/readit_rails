@@ -10,14 +10,6 @@ class BooksController < ApplicationController
 
   def new
   end
- 
-  # def create
-  #   book_name = params[:book][:title]
-  #   genre = params[:book][:genre]
-  #   user = @user.id
-  #   find_book
-  #   redirect_to root_path
-  # end
 
   def create
     @book = Book.new(book_params)
@@ -55,10 +47,6 @@ class BooksController < ApplicationController
 
   def current_book
     @book = Book.find_by_id(params[:id])
-  end
-
-  def find_book
-    @book = Book.find_book(current_user, params[:book][:title], params[:book][:genre])
   end
 
 end
