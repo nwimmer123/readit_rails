@@ -1,30 +1,3 @@
-<%
-=begin%>
-
-<ul class="list-group" id="books-list">
-
-  <% @search.each do |d| %>
-    <% d.data["items"].each do |i| %>
-      <li class="list-group-item book" >
-        <% the_book = i["volumeInfo"] %>
-        <img alt="Book Jacket" class="homepageImages" src=<%= the_book["imageLinks"]["thumbnail"] %> >
-        <p><b>Title: </b><%= the_book["title"] %></p>
-        <% authors = the_book["authors"] %>
-        <% if authors.nil? %>
-          <% authors = ["No Author Listed"] %>
-        <% end %>
-        <p><b>Author: </b><%= authors.join(", ") %></p>
-        <p><b>Publisher: </b> <%= the_book["publisher"] %></p>
-        <p><b>Date Published: </b> <%= the_book["publishedDate"] %></p>
-        <p><b>Synopsis: </b><%= the_book["description"] %></p>
-        <%= link_to "Add It", new_book_path, class: "btn btn-primary" %>
-
-      </li>
-    <% end %>
-  <% end %> 
-<%
-=end%>
-
 <ul class="list-group" id="books-list">
   <% @search.each do |d| %>
     <% d.data["items"].each do |i| %>
@@ -80,6 +53,13 @@
               <label class="col-md-4 control-label" for="genre">Genre</label>
               <div class="col-md-8">
                 <%= f.select :genre, [["Sci-fi", "Sci-fi"], ["Fantasy", "Fantasy"], ["Comic", "Comic"], ["Manga", "Manga"], ["Fiction", "Fiction"], ["Non-Fiction", "Non-Fiction"]], class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="genre">Are you currently reading this?</label>
+              <div class="col-md-8">
+                <%= f.check_box :current, {}, 1, 0 %>
               </div>
             </div>
 
