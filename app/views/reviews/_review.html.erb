@@ -14,10 +14,10 @@
       <p><%= review.body %></p>
     </blockquote>
 
-      <% if review.user.id == session[:user_id] %>
+
         <%= link_to "Edit", edit_book_review_path(@book.id, review), method: "get", class: "pull-right btn btn-primary col-xs-2" %>
         <%= link_to "Delete", delete_book_review_path(@book.id, review) ,method: :delete, data: {confirm: "Are you sure you want to delete ythis review?"}, class: "btn btn-danger col-xs-2 pull-right" %>
-      <% end %>
+
 
     <% from_reply_form ||= nil %>
     <% unless from_reply_form %>
