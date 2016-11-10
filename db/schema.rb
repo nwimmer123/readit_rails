@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20161110192719) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
-    t.integer  "current"
+    t.string   "current"
   end
 
   add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree

@@ -24,7 +24,7 @@
         <ul class="profileDisplay" >
 
           <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
-          <% if book.current == 1 %>
+          <% if book.current == "1" %>
             <h4>I am currently reading this book</h4>
           <% end %>
           <p><b>Contributor: </b><%= book.user.name %></p>

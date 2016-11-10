@@ -57,10 +57,8 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="genre">Are you currently reading this?</label>
-              <div class="col-md-8">
-                <%= f.check_box :current, {}, 1, 0 %>
-              </div>
+              <label class="col-md-6 control-label" for="current">Are you currently reading this?</label>
+                <%= f.check_box :current %>
             </div>
 
             <%= f.hidden_field :image, value: image%>
