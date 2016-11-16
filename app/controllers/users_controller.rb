@@ -20,11 +20,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find_by_id(params[:id])
-    @books= Book.all
-    @books = @books.order(:current)
-  end
+    def show
+      @user = User.find_by_id(params[:id])
+      #@books = Book.all
+      @books = @user.books.order(current: :desc)
+      #@books= Book.all.sort { |p1, p2| p1.current <=> p2.current }
+      #@books = @books.order(:current)
+    end
 
   def edit
   end
