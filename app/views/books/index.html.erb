@@ -18,11 +18,10 @@
         <%= link_to book do %>
           <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
         <% end %>
-        <p><b>Added: </b><%= l(book.created_at, format: '%B, %d %Y') %></p>
-        <p><b>Contributor: </b><%= link_to book.user.name, user_path(book.user.id) %> </p>
-        <p><b>Title: </b><%= book.title %></p>
+        <p><b>Title: </b><%= link_to book.title, book_path(book.id) %></p>
         <p><b>Author: </b><%= book.author %></p>
         <p><b>Genre: </b><%= book.genre %></p>
+        <p><b>Added by: </b><%= link_to book.user.name, user_path(book.user.id) %> on <%= l(book.created_at, format: '%B, %d %Y') %> </p>
       </li>
     <% end %>
   </ul>   
