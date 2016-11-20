@@ -1,36 +1,30 @@
 <body class="homepage">
-    <div class="top container">
-      <h1>Welcome to Read It!</h1>
-      <h2>Book reviews and discussion</h2>
-    </div>
 
-<!-- Checks to see if someone is logged in prior to displaying button -->
-<% if current_user %> 
-  <div class="container">
-    <%= link_to "Add Book", new_search_path, class: "btn btn-primary btn-lg pull-right" %></div>
+  <div class="top container">
+    <h1>Welcome to Read It!</h1>
+    <h2>Book reviews and discussion</h2>
   </div>
-<% end %>
 
-  <!--Book List Display -->
+  <!-- Checks to see if someone is logged in prior to displaying button -->
+  <% if current_user %> 
+    <div class="container">
+      <%= link_to "Add Book", new_search_path, class: "btn btn-primary btn-lg pull-right" %></div>
+    </div>
+  <% end %>
 
   <ul class="list-group" id="books-list">
-
     <% @books.each do |book| %>
-  
-        <li class="list-group-item book" >
-          <%= link_to book do %>
-            <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
-          <% end %>
-          <p><b>Added: </b><%= l(book.created_at, format: '%B, %d %Y') %></p>
-          <p><b>Contributor: </b><%= link_to book.user.name, user_path(book.user.id) %> </p>
-          <p><b>Title: </b><%= book.title %></p>
-          <p><b>Author: </b><%= book.author %></p>
-          <p><b>Genre: </b><%= book.genre %></p>
-        </li>
-        
-    
+      <li class="list-group-item book" >
+        <%= link_to book do %>
+          <img alt="Book Jacket" class="homepageImages" src=<%= book.image %> >
+        <% end %>
+        <p><b>Added: </b><%= l(book.created_at, format: '%B, %d %Y') %></p>
+        <p><b>Contributor: </b><%= link_to book.user.name, user_path(book.user.id) %> </p>
+        <p><b>Title: </b><%= book.title %></p>
+        <p><b>Author: </b><%= book.author %></p>
+        <p><b>Genre: </b><%= book.genre %></p>
+      </li>
     <% end %>
-  
   </ul>   
  
 </body>    
