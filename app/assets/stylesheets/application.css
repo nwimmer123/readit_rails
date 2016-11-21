@@ -19,7 +19,7 @@
 
 .page{
   margin-top: 10px;
-  background:url('/images/starfield.jpg') no-repeat center center;
+  background:url('/images/starfield.jpg') no-repeat center center fixed;
   min-height:100%;
   background-size: cover;
   color: papayawhip;
@@ -44,7 +44,7 @@
 }
 
 .homepage{
-  background:url('/images/infinity2.jpg') no-repeat center center;
+  background:url('/images/infinity2.jpg') no-repeat center center fixed;
   min-height:100%;
   background-size:cover;
 }
