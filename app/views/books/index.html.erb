@@ -1,8 +1,8 @@
 <body class="homepage">
 
-  <div class="top container">
+  <div class="top container text-center">
     <h1>Welcome to Read It!</h1>
-    <h2>Book reviews and discussion</h2>
+    <h4>Book reviews and discussion</h4>
   </div>
 
   <!-- Checks to see if someone is logged in prior to displaying button -->
@@ -22,6 +22,11 @@
         <p><%= book.author %></p>
         <p><b><%= book.genre %></b></p>
         <p>Added by <%= link_to book.user.name, user_path(book.user.id) %> on <%= l(book.created_at, format: '%B, %d %Y') %> </p>
+        <% if book.reviews.length == 1%>
+          <p><b><%= book.reviews.length%></b> Comment</p>
+        <% else %>
+          <p><b><%= book.reviews.length%></b> Comments</p>
+        <% end %>
       </li>
     <% end %>
   </ul>   

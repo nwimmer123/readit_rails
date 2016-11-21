@@ -15,6 +15,8 @@ The purpose of Read It is for friends to be able to share book recommendations a
 * Nested comments with edit
 * Search for the book you would like to add using Google Books API
 * Autopoultaed forms using Google Books API
+* Currently reading tag shows on users profile
+* All children nodes of a spoiler comment are autmatically marked as spoilers
 
 ## Motivation
 
@@ -31,8 +33,6 @@ There are many planned additions to this site.
 * Get a notification when someone posts in a book you've posted or responds inside your thread.
 
 ### User Profile ###
-* Currently reading tag, with the date that the reader is currently on.
-* The currently reading book will be on the top of the profile.
 * Allow users to upload avatar pictures that sit next to their reviews.
 
 ### Book rating system ###

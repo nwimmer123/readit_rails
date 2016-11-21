@@ -50,10 +50,11 @@
 }
 
 .top {
-  font-family: 'UnifrakturMaguntia', cursive;
-  color: #CED807;
+  /*font-family: 'UnifrakturMaguntia', cursive;*/
+  font-family: fantasy;
+  color: #fdf7d1;
   margin-top: 25px;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 2px 2px black;
 }
 
 /* PROFILE PAGE STYLING - user.show */
