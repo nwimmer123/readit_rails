@@ -34,13 +34,15 @@
  /* HOMEPAGE STYLING - books.index */
 
 .book{
-  margin: 20px 20px 20px 20px;
+  margin: 10px 10px 10px 10px;
   opacity: 0.8;
+  background: white;
+  padding: 10px 10px 10px 10px;
 }
 
 .homepageImages {
   float: right;
-  height: 120px;
+  height: 175px;
 }
 
 .homepage{
@@ -96,9 +98,10 @@
 
 #showpageImages {
   float: right;
-  height: 160px;
-  margin-top: 15px;
+  height: 170px;
+  /*margin-top: 15px;*/
   opacity: 1;
+  margin: 0px 0px 5px 10px;
 }
 
 .addReview {
