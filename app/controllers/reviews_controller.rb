@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
 			parent = Review.find_by_id(params[:review].delete(:parent_id))
 			@review = parent.children.build(review_params)
 			@review.user = current_user
+			spoiler_check
 		else
 			@review = Review.new(review_params)
 			@review.user = current_user
@@ -56,5 +57,14 @@ class ReviewsController < ApplicationController
 
 		def current_review
 			@review = Review.find_by_id(params[:id])
+		end
+
+		def spoiler_check
+			if @review.child?
+				parent = @review.parent
+				if parent.spoiler == "1"
+					@review.spoiler = parent.spoiler
+				end
+			end
 		end
 end
