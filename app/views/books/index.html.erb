@@ -5,12 +5,25 @@
     <h4>Book reviews and discussion</h4>
   </div>
 
+  <div class="container">
+    <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by Title, Author or Genre" %>
+      <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
+    <% end %>
+  </div>
+
   <!-- Checks to see if someone is logged in prior to displaying button -->
   <% if current_user %> 
     <div class="container">
-      <%= link_to "Add Book", new_search_path, class: "btn btn-primary btn-lg pull-right" %></div>
+      <%= link_to "Add Book", new_search_path, class: "btn btn-primary pull-right" %></div>
     </div>
   <% end %>
+
+  <div class="container search">
+    <% if @books.blank? %>
+      <h4>There are no items that exactly match <%= params[:search] %>. Please note thatthis search is particular and picky. If it's not exact, it won't match. Please try again.</h4>
+    <% end %>
+  </div>
 
   <ul class="list-group" id="books-list">
     <% @books.each do |book| %>

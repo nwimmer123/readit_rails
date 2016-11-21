@@ -52,11 +52,15 @@
 }
 
 .top {
-  /*font-family: 'UnifrakturMaguntia', cursive;*/
   font-family: fantasy;
   color: #fdf7d1;
   margin-top: 25px;
   text-shadow: 2px 2px black;
+}
+
+.search {
+  margin-top: 15px;
+  background: white;
 }
 
 /* PROFILE PAGE STYLING - user.show */

@@ -4,8 +4,13 @@ class BooksController < ApplicationController
   before_action :set_user, only: [:create, :show, :update, :destroy]
 
   def index
-    @books = Book.all
-    @books = @books.order(created_at: :desc)
+    #@books = Book.all
+    #@books = @books.order(created_at: :desc)
+    if params[:search]
+      @books = Book.search(params[:search]).order("created_at DESC")
+    else
+      @books = Book.all.order(created_at: :desc)
+    end
   end
 
   def new
