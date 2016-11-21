@@ -7,7 +7,7 @@
 
   <div class="container">
     <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search by Title, Author or Genre" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Title, Author or Genre" %>
       <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
     <% end %>
   </div>

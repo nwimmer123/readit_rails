@@ -17,6 +17,7 @@ The purpose of Read It is for friends to be able to share book recommendations a
 * Autopoultaed forms using Google Books API
 * Currently reading tag shows on users profile
 * All children nodes of a spoiler comment are autmatically marked as spoilers
+* Users can search the book recommendations by the different fields.
 
 ## Motivation
 
@@ -39,9 +40,6 @@ There are many planned additions to this site.
 * Users will be able to rank books. Each user will be allowed to rank a book once.
 * The rank options will be:  Worst Ever, Bad, Ehhh, Good, GOAT.
 * A detailed graph of all votes per category will be shown via a button click.
-
-### Search Capability ###
-* Users will be able to search the book recommendations by the different fields.
 
 ### Site Organization ###
 * Once a ratings system is in place, then the books will be ranked by highest rankings.
