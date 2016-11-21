@@ -29,8 +29,8 @@
         <p><b>Title: </b><%= book.title %></p>
         <p><b>Author: </b><%= book.author %></p>
         <p><b>Genre: </b><%= book.genre %></p>
-        <p><b>Publication Date: </b><%= book.publication_date %></p>
         <p><b>Publisher: </b><%= book.publisher %></p>
+        <p><b>Publication Date: </b><%= book.publication_date %></p>
         <p><b>Synopsis: </b><%= book.synopsis %></p>
         <% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
           <%= button_to "Edit Book", book_edit_path(book.id), method: "get", class: "btn btn-primary col-xs-2" %>
