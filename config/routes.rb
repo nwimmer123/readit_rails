@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'passsword_resets/new'
+
   root to: "books#index"
 
   get "/users", to: "users#index", as: "users"
