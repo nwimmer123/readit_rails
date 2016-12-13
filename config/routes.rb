@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   get "/searches/new", to: "search#new", as: "new_search"
   post "/searches", to: "search#create"
 
+  resources :password_resets
+
 
 end
