@@ -10,14 +10,11 @@
       <%= text_field_tag :search, params[:search], placeholder: "Title, Author or Genre" %>
       <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
     <% end %>
-  </div>
-
-  <!-- Checks to see if someone is logged in prior to displaying button -->
-  <% if current_user %> 
-    <div class="container">
+ 
+    <% if current_user %> 
       <%= link_to "Add Book", new_search_path, class: "btn btn-primary pull-right" %></div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div class="container search">
     <% if @books.blank? %>
