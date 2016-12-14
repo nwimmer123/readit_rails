@@ -35,7 +35,12 @@ Rails.application.routes.draw do
   get "/searches/new", to: "search#new", as: "new_search"
   post "/searches", to: "search#create"
 
+
   resources :password_resets
+  # get "/password_resets/new", to: "password_resets#new", as: "new_password_reset"
+  # post "/password_resets", to: "password_resets#create" 
+  # get "/password_resets/:id/edit", to: "password_resets#edit", as: "edit_password_resets"
+  
 
 
 end
