@@ -60,6 +60,7 @@ class ReviewsController < ApplicationController
 		end
 
 		def spoiler_check
+
 			if @review.child?
 				parent = @review.parent
 				if parent.spoiler == "1"
